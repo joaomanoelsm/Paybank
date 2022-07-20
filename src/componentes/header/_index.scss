@@ -52,7 +52,21 @@
 }
 
 @media (max-width: 1360px) {
+    #header {
+        #header__nav {
+            width: 882px;
+        }
+    }
+
     html {
         font-size: 43.75%;
+    }
+}
+
+@media (max-width: 1023px) {
+    #header {
+        #header__nav {
+            width: 85%;
+        }
     }
 }

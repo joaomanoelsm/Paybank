@@ -3,3 +3,24 @@
     width: 100%;
     margin: auto;
 }
+
+@media (max-width: 1360px) {
+    #bank {
+        width: 882px;
+    }
+    html {
+        font-size: 43.75%;
+    }
+}
+
+@media (max-width: 1023px) {
+    #bank {
+        width: 85%;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 30%;
+    }
+}

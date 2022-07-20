@@ -42,11 +42,14 @@
             .transactions__info {
                 display: flex;
 
+                img {
+                    width: 2rem;
+                }
+
                 .transactions__data {
                     display: flex;
                     flex-direction: column;
                     margin-left: 2rem;
-
     
                     .transactions__name {
                     
@@ -71,11 +74,5 @@
                 }
             } 
         }
-    }
-}
-
-@media (max-width: 1360px) {
-    html {
-        font-size: 43.75%;
     }
 }

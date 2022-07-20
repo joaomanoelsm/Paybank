@@ -1,16 +1,20 @@
 #payments {
+    overflow: auto;
     margin: 0px auto 8rem auto;
 
     #payments__container {
-        width: 100%;
-    
         display: flex;
         justify-content: space-between;
+
 
         .payments__icons {
             display: flex;
             flex-direction: column;
             align-items: center;
+
+            &:nth-child(-n+4) {
+                margin-right: 40px;
+            }
     
             span {
                 @include text-effect($medium-font, $nunito-font, 600, $text-color);
@@ -29,6 +33,11 @@
                 background: linear-gradient(to bottom, $principal-color, rgba(69, 66, 245, 0.74));
                 border-radius: 1rem;
                 cursor: pointer;
+
+                img {
+                    width: 48%;
+                    height: 48%;
+                }
     
                 &:hover {
                     filter: brightness(120%);
@@ -40,8 +49,20 @@
     
 }
 
-@media (max-width: 1360px) {
-    html {
-        font-size: 43.75%;
+@media (max-width: 1023px) {
+    #payments {
+        
+      #payments__container {
+        width: auto;
+      }
+    }
+}
+
+@media (max-width: 767px) {
+    .payments__icons {
+
+        &:nth-child(-n+4) {
+            margin-right: 20px;
+        }
     }
 }
