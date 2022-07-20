@@ -7,9 +7,9 @@ $warning-color: #F54040;
 $secondary-warning-color: #FE9D9D;
 
 /*Font*/
-$bold-font: 48px;
-$medium-font: 32px;
-$light-font: 24px;
+$bold-font: 4.8rem;
+$medium-font: 3.2rem;
+$light-font: 2.4rem;
 $nunito-font: 'Nunito';
 $lato-font: 'lato';
 
@@ -23,9 +23,8 @@ $screen-size: 1260px;
     font-family: 'Nunito', 'Lato', sans-serif;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
+html {
+    font-size: 62.5%;
 }
 
 @mixin text-effect($font, $family, $weight, $color) {

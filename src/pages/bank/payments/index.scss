@@ -1,7 +1,5 @@
 #payments {
-    max-width: $screen-size;
-    width: 100%;
-    margin: 0px auto 80px auto;
+    margin: 0px auto 8rem auto;
 
     #payments__container {
         width: 100%;
@@ -16,7 +14,7 @@
     
             span {
                 @include text-effect($medium-font, $nunito-font, 600, $text-color);
-                margin-top: 12px;
+                margin-top: 1.2rem;
             }
     
             .payments__wallpapers {
@@ -25,11 +23,11 @@
                 align-items: center;
                 justify-content: center;
     
-                width: 180px;
-                height: 180px;
+                width: 18rem;
+                height: 18rem;
     
                 background: linear-gradient(to bottom, $principal-color, rgba(69, 66, 245, 0.74));
-                border-radius: 10px;
+                border-radius: 1rem;
                 cursor: pointer;
     
                 &:hover {
@@ -43,67 +41,7 @@
 }
 
 @media (max-width: 1360px) {
-    #payments {
-        width: 760px;
-        margin-bottom: 60px;
-
-        #payments__container {
-            width: 760px;
-
-            .payments__icons {
-
-                span {
-                    @include text-effect($light-font, $nunito-font, 600, $text-color);
-                    margin-top: 8px;
-                }
-
-                .payments__wallpapers {
-                    width: 120px;
-                    height: 120px;
-                    
-                    img {
-                        width: 50%;
-                        height: 50%;
-                    }
-                }
-            }
-    
-        }
-    }
-}
-
-@media (max-width: 860px) {
-    #payments {
-        width: 90%;
-        overflow: auto;
-    }
-}
-
-@media (max-width: 500px) {
-    #payments {
-        margin-bottom: 40px;
-
-        #payments__container {
-            width: 472px;
-
-            .payments__icons {
-
-                span {
-                    @include text-effect(16px, $nunito-font, 600, $text-color);
-                    margin-top: 6px;
-                }
-
-                .payments__wallpapers {
-                    width: 80px;
-                    height: 80px;
-                    
-                    img {
-                        width: 50%;
-                        height: 50%;
-                    }
-                }
-            }
-    
-        }
+    html {
+        font-size: 43.75%;
     }
 }
