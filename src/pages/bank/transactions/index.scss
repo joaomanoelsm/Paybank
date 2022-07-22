@@ -52,9 +52,14 @@
                     margin-left: 2rem;
     
                     .transactions__name {
+                        display: flex;
                     
                         span {
                             @include text-effect($medium-font, $nunito-font, 500, $dark-gray );
+                            max-width: 600px;
+                            white-space: nowrap;
+                            overflow: hidden;
+                            text-overflow: ellipsis;
                         }
                     }
         
@@ -73,6 +78,36 @@
                     @include text-effect($light-font, $lato-font, 500, $dark-gray );
                 }
             } 
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    .transactions__name {
+    
+        span {
+            max-width: 400px;
+            color: red;
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #transactions {
+        #transactions__historic {
+            .transactions__historic__itens {
+                .transactions__info {
+                    .transactions__data {
+                        .transactions__name {
+    
+                            span {
+                                max-width: 150px;
+                                margin-right: 20px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }

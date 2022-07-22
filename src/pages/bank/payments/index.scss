@@ -45,8 +45,6 @@
             }
         }
     }
-
-    
 }
 
 @media (max-width: 1023px) {
@@ -59,10 +57,16 @@
 }
 
 @media (max-width: 767px) {
-    .payments__icons {
+    #payments {
+    
+        #payments__container {
 
-        &:nth-child(-n+4) {
-            margin-right: 20px;
+            .payments__icons {
+        
+                &:nth-child(-n+4) {
+                    margin-right: 20px;
+                }
+            }
         }
     }
 }

@@ -1,10 +1,9 @@
 import React from 'react';
-import { useState } from 'react';
 import alertIcon from '../../assets/svgs/Alert.svg';
 
 const Input = () => {
-    const [ input, setInput ] = useState('R$ ')
-    const [ warning, setWarning ] = useState(false)
+    const [ input, setInput ] = React.useState('R$ ')
+    const [ warning, setWarning ] = React.useState(false)
     const inputRef = React.useRef()
 
     if (input.length === 2) {

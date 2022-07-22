@@ -20,12 +20,35 @@
         box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.103);
 
         span {
-            @include text-effect($bold-font, $nunito-font, 600, $text-color);
+            @include text-effect($medium-font, $nunito-font, 600, $text-color);
+            max-width: 800px;
         }
 
         img {
-            width: 5.6rem;
+            width: 4.2rem;
             cursor: pointer;
+        }
+    }
+}
+
+@media (max-width: 1360px) {
+    #balance {
+        #balance__container {
+
+            span {
+                max-width: 500px;
+            }
+        }
+    }
+}
+
+@media (max-width: 767px) {
+    #balance {
+        #balance__container {
+
+            span {
+                max-width: 200px;
+            }
         }
     }
 }
