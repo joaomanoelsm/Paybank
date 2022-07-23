@@ -1,7 +1,7 @@
 import React from 'react';
 import alertIcon from '../../assets/svgs/Alert.svg';
 
-const Input = () => {
+const Input = ({ title }) => {
     const [ input, setInput ] = React.useState('R$ ')
     const [ warning, setWarning ] = React.useState(false)
     const inputRef = React.useRef()
@@ -33,14 +33,14 @@ const Input = () => {
     }, [ inputRef, input ])
 
     return (
-        <div className='search__container'>
-            <label htmlFor="">Digite o valor a cobrar</label>
+        <section className='search__container'>
+            <label htmlFor="">{ title }</label>
             <input ref={ inputRef } onChange={ ({ target }) => setInput(target.value)} value={ input } className='input' placeholder='R$' type="text" />
             { warning ? <div className='warning'>
                 <img src={ alertIcon } alt="" />
                 <span>Aviso: O formulário só aceita números</span>
             </div> : ''}
-        </div>
+        </section>
     )
 }
 

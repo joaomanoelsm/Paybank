@@ -1,0 +1,13 @@
+.footer {
+    height: 6rem;
+    margin-top: 10rem;
+    background: linear-gradient(to top, $principal-color, rgba(69, 66, 245, 0.459));
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    span {
+        @include text-effect($small-font, $small-font, $nunito-font, 600, white)
+    }
+}

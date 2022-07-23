@@ -17,10 +17,10 @@
         align-items: flex-end;
         justify-content: space-between;
 
-        max-width: $screen-size;
+        max-width: $screen-size-1;
         width: 100%;
         height: 11rem;
-        margin: 0px 5rem;
+        margin: 0 5rem;
 
         #header__menu {
             display: flex;
@@ -54,7 +54,7 @@
 @media (max-width: 1360px) {
     #header {
         #header__nav {
-            width: 882px;
+            width: $screen-size-2;
         }
     }
 
@@ -66,7 +66,7 @@
 @media (max-width: 1023px) {
     #header {
         #header__nav {
-            width: 85%;
+            width: $screen-size-3;
         }
     }
 }

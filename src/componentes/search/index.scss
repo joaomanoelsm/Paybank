@@ -1,97 +1,70 @@
-.search {
-    max-width: $screen-size;
-    width: 100%;
-    margin: auto;
-
-    .search__container {
+.search__container {
         width: 100%;
         position: relative;
         overflow: hidden;
         margin-bottom: 10rem;
     
-        label {
-            @include text-effect(6.4rem, $nunito-font, 600, $text-color );
-            line-height: 6.4rem;
-            display: block;
-            margin: 12rem 0px 10rem 0px;
-        }
-    
-        .input {
-            background: none;
-            outline: none;
-    
-            height: auto;
-            border-radius: 0.2rem;
-            
-            border-bottom-width: 0.3rem;
-            border-bottom-color: #616161;
-    
-            border-top-color: transparent;
-            border-left-color: transparent;
-            border-right-color: transparent;
-    
-            @include text-effect($medium-font, $nunito-font, 500, $dark-gray );
-            line-height: 3.6rem;
-    
-            
-            &::placeholder {
-                @include text-effect($medium-font, $nunito-font, 500, #616161 );
-                line-height: 3.6rem;
-            }
-    
-        }
-    
-        .search__img {
-            position: absolute;
-            right: 0; bottom: 0.8rem;
-            width: 3.6rem;
-        }
+    label {
+        @include text-effect($very-big-font, $very-big-font, $nunito-font, 600, $text-color );
+        display: block;
+        margin: 12rem 0 10rem 0;
     }
 
-    .search__list {
+    .input {
+        background: none;
+        outline: none;
 
-        h2 {
-            @include text-effect($bold-font, $nunito-font, 700, $text-color);
-            margin-bottom: 2rem;
+        height: auto;
+        border-radius: 0.2rem;
+        
+        border-bottom-width: 0.3rem;
+        border-bottom-color: #616161;
+
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+
+        @include text-effect($medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+
+        
+        &::placeholder {
+            @include text-effect($medium-font, $medium-font, $nunito-font, 500, #616161 );
         }
 
-        .search__contacts {
-            box-shadow: 0 0.3rem 1rem hsla(0, 0%, 0%, 0.103);
-            border-radius: 0.5rem;
-            padding: 4rem;
+    }
 
-            .contact__add {
-                position: relative;
-                padding: 4rem 0;
+    .search__img {
+        position: absolute;
+        right: 0; bottom: 0.3rem;
+        width: 5.6rem;
+        height: 3.6rem;
+    }
+}
 
-                img {
-                    width: 2.6rem;
-                    margin-right: 2rem
-                }
-                
-                span {
-                    @include text-effect($medium-font, $nunito-font, 500, $dark-gray);
-    
-                    &::after {
-                        content: '';
-                        width: 100%;
-                        height: 0.2rem;
-                        background-color: $light-gray;
-                        
-                        position: absolute;
-                        left: 0; bottom: 0;
-                    }
-                }
+.search__list {
+
+    h2 {
+        @include text-effect($big-font, $big-font, $nunito-font, 700, $text-color);
+        margin-bottom: 2rem;
+    }
+
+    .search__contacts {
+        max-height: 80rem;
+        box-shadow: 0 0.3rem 1rem hsla(0, 0%, 0%, 0.103);
+        border-radius: 0.5rem;
+        padding: 4rem;
+
+        .contact__add {
+            position: relative;
+            padding: 0 0 4rem 0;
+
+            img {
+                width: 2.6rem;
+                margin-right: 2rem
             }
-
-            .contact {
-                position: relative;
-                padding: 4rem 0;
-
-                span {
-                    @include text-effect($medium-font, $nunito-font, 500, $dark-gray);
-                    max-width: 800px;
-                }
+            
+            span {
+                @include text-effect($medium-font, $medium-font, $nunito-font, 500, $dark-gray);
 
                 &::after {
                     content: '';
@@ -102,40 +75,50 @@
                     position: absolute;
                     left: 0; bottom: 0;
                 }
+            }
+        }
 
-                &::before {
-                    content: '';
-                    margin-right: 2rem;
-                    display: inline-block;
-                    width: 2rem;
-                    height: 2rem;
-                    background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
-                    border-radius: 50%;
-                }
+        .contact {
+            position: relative;
+            padding: 4rem 0;
+
+            span {
+                @include text-effect($medium-font, $medium-font, $nunito-font, 500, $dark-gray);
+                max-width: 800px;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 0.2rem;
+                background-color: $light-gray;
+                
+                position: absolute;
+                left: 0; bottom: 0;
+            }
+
+            &::before {
+                content: '';
+                margin-right: 2rem;
+                display: inline-block;
+                width: 2rem;
+                height: 2rem;
+                background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
+                border-radius: 50%;
             }
         }
     }
 }
 
-@media (max-width: 1360px) {
-    .search {
-        width: 882px;
-    }
-}
-
 @media (max-width: 1023px) {
-    .search {
-        width: 85%;
-        
-        .search__list {
-    
-            .search__contacts {
-    
-                .contact {
-    
-                    span {
-                        max-width: 230px;
-                    }
+    .search__list {
+
+        .search__contacts {
+
+            .contact {
+
+                span {
+                    max-width: 230px;
                 }
             }
         }
@@ -143,17 +126,14 @@
 }
 
 @media (max-width: 767px) {
-    .search {
-        
-        .search__list {
-    
-            .search__contacts {
-    
-                .contact {
-    
-                    span {
-                        max-width: 230px;
-                    }
+    .search__list {
+
+        .search__contacts {
+
+            .contact {
+
+                span {
+                    max-width: 230px;
                 }
             }
         }

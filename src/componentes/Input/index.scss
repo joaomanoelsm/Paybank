@@ -1,13 +1,11 @@
 .search__container {
-    width: $screen-size;
-    margin: auto;
     overflow: hidden;
 
     label {
-        @include text-effect(64px, $nunito-font, 600, $text-color );
-        line-height: 64px;
+        @include text-effect($very-big-font, $very-big-font, $nunito-font, 600, $text-color );
+        line-height: 6.4rem;
         display: block;
-        margin: 120px 0px 100px 0px;
+        margin: 12rem 0 10rem 0;
     }
 
     .input {
@@ -16,22 +14,20 @@
 
         width: 100%;
         height: auto;
-        border-radius: 2px;
+        border-radius: 0.2rem;
         
-        border-bottom-width: 3px;
+        border-bottom-width: 0.3rem;
         border-bottom-color: #616161;
 
         border-top-color: transparent;
         border-left-color: transparent;
         border-right-color: transparent;
 
-        @include text-effect($medium-font, $nunito-font, 500, $dark-gray );
-        line-height: 36px;
+        @include text-effect($medium-font, $medium-font, $nunito-font, 500, $dark-gray );
 
         
         &::placeholder {
-            @include text-effect($medium-font, $nunito-font, 500, #616161 );
-            line-height: 36px;
+            @include text-effect($medium-font, $medium-font, $nunito-font, 500, #616161 );
         }
 
     }
@@ -42,17 +38,17 @@
         align-items: center;
 
         width: 100%;
-        height: 80px;
+        height: 8rem;
         background-color: $secondary-warning-color;
 
-        margin-top: 40px;
-        padding: 20px;
-        border-radius: 5px;
-        border: 1px solid $warning-color;
+        margin-top: 4rem;
+        padding: 2rem;
+        border-radius: 0.5rem;
+        border: 0.1rem solid $warning-color;
 
         span {
-            margin-left: 12px;
-            @include text-effect($medium-font, $nunito-font, 600, $warning-color);
+            margin-left: 1.2rem;
+            @include text-effect($medium-font, $medium-font, $nunito-font, 600, $warning-color);
         }
     }
 }

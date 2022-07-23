@@ -1,10 +1,10 @@
 #transactions {
-    margin: 0px auto 10rem auto;
+    margin: auto;
 
     #transactions__title {
 
         h2 {
-            @include text-effect($bold-font, $nunito-font, 700, $text-color );
+            @include text-effect($big-font, $big-font, $nunito-font, 700, $text-color );
             margin-bottom: 3.2rem;
         }
     }
@@ -55,7 +55,7 @@
                         display: flex;
                     
                         span {
-                            @include text-effect($medium-font, $nunito-font, 500, $dark-gray );
+                            @include text-effect($medium-font, auto, $nunito-font, 500, $dark-gray );
                             max-width: 600px;
                             white-space: nowrap;
                             overflow: hidden;
@@ -66,7 +66,7 @@
                     .transactions__date {
         
                         span {
-                            @include text-effect($light-font, $nunito-font, 500, $dark-gray );
+                            @include text-effect($small-font, auto, $nunito-font, 500, $dark-gray );
                         }
                     } 
                 }
@@ -75,7 +75,7 @@
             .transactions__amount {
 
                 span {
-                    @include text-effect($light-font, $lato-font, 500, $dark-gray );
+                    @include text-effect($small-font, $small-font, $lato-font, 500, $dark-gray );
                 }
             } 
         }
@@ -83,11 +83,20 @@
 }
 
 @media (max-width: 1023px) {
-    .transactions__name {
+    #transactions {
+        #transactions__historic {
+            .transactions__historic__itens {
+                .transactions__info {
+                    .transactions__data {
+                        .transactions__name {
     
-        span {
-            max-width: 400px;
-            color: red;
+                            span {
+                                max-width: 400px;
+                            }
+                        }
+                    }
+                }
+            }
         }
     }
 }
@@ -101,8 +110,7 @@
                         .transactions__name {
     
                             span {
-                                max-width: 150px;
-                                margin-right: 20px;
+                                max-width: 100px;
                             }
                         }
                     }

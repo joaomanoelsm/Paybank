@@ -5,11 +5,11 @@ import Transactions from './transactions';
 
 const Bank = () => {
   return (
-    <main id='bank'>
+    <>
       <Balance />
       <Payments />
       <Transactions />
-    </main>
+    </>
   )
 }
 

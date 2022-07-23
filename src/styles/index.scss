@@ -7,14 +7,17 @@ $warning-color: #F54040;
 $secondary-warning-color: #FE9D9D;
 
 /*Font*/
-$bold-font: 4.8rem;
+$very-big-font: 6.4rem;
+$big-font: 4.8rem;
 $medium-font: 3.2rem;
-$light-font: 2.4rem;
+$small-font: 2.4rem;
 $nunito-font: 'Nunito';
-$lato-font: 'lato';
+$lato-font: 'Lato';
 
-/*Scree*/
-$screen-size: 1260px;
+/*Screen*/
+$screen-size-1: 1260px;
+$screen-size-2: 882px;
+$screen-size-3: 85%;
 
 * {
     margin: 0;
@@ -27,8 +30,9 @@ html {
     font-size: 62.5%;
 }
 
-@mixin text-effect($font, $family, $weight, $color) {
+@mixin text-effect($font, $lineHeight, $family, $weight, $color) {
     font-size: $font;
+    line-height: $lineHeight;
     font-family: $family, Arial, Helvetica, sans-serif;
     font-weight: $weight;
     color: $color;
@@ -42,4 +46,31 @@ html {
 ::-webkit-scrollbar-thumb {
     background-color: #a1a1a1;
     border-radius: 4px;
+}
+
+#main {
+    max-width: $screen-size-1;
+    width: 100%;
+    margin: auto;
+}
+
+@media (max-width: 1360px) {
+    #main {
+        width: $screen-size-2;
+    }
+    html {
+        font-size: 43.75%;
+    }
+}
+
+@media (max-width: 1023px) {
+    #main {
+        width: $screen-size-3;
+    }
+}
+
+@media (max-width: 767px) {
+    html {
+        font-size: 30%;
+    }
 }
