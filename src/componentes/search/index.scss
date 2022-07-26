@@ -85,16 +85,9 @@
             span {
                 @include text-effect($medium-font, $medium-font, $nunito-font, 500, $dark-gray);
                 max-width: 800px;
-            }
-
-            &::after {
-                content: '';
-                width: 100%;
-                height: 0.2rem;
-                background-color: $light-gray;
-                
-                position: absolute;
-                left: 0; bottom: 0;
+                white-space: nowrap;
+                overflow: hidden;
+                text-overflow: ellipsis;
             }
 
             &::before {
@@ -105,6 +98,16 @@
                 height: 2rem;
                 background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
                 border-radius: 50%;
+            }
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 0.2rem;
+                background-color: $light-gray;
+                
+                position: absolute;
+                left: 0; bottom: 0;
             }
         }
     }
@@ -133,7 +136,8 @@
             .contact {
 
                 span {
-                    max-width: 230px;
+                    max-width: 140px;
+                    color: red;
                 }
             }
         }

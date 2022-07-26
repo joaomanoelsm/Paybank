@@ -1,9 +1,13 @@
 import React from 'react';
 import visibilitySvg from '../../../assets/svgs/visibility.svg';
 import visibilityOffSvg from '../../../assets/svgs/visibility_off.svg';
+import { useSelector } from 'react-redux/es/exports';
+import { selectUser } from '../../../store/useSlice';
 
 const Balance = () => {
   let [ icon, setIcon ] = React.useState(true)
+
+  const state = useSelector(selectUser)
 
   const toogleIcon = () => setIcon( (state) => !state)
 
@@ -13,7 +17,7 @@ const Balance = () => {
             <h2>Balance</h2>
          </div>
          <div id='balance__container'>
-            <span>R$ 1.400,32</span>
+            <span>R$ { state }</span>
             <img src={ icon ? visibilitySvg : visibilityOffSvg } alt="" onClick={ toogleIcon } />
          </div>
     </section>

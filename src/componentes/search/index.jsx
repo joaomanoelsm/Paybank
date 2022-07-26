@@ -3,8 +3,7 @@ import searchIcon from '../../assets/svgs/search.svg';
 import addIcon from '../../assets/svgs/Add.svg';
 
 const Search = () => {
-    const [ search, setSearch ] = React.useState()
-
+    const [ search, setSearch ] = React.useState('')
     const contacts = ['Carlos daniel', 'Douglas santos', 'Fernanda de oliveira', 'Jessica alvez da cruz', 'Amanda costa']
 
   return (
@@ -23,7 +22,7 @@ const Search = () => {
           </div>
           { contacts.map( contact => {
             return (
-              <div className='contact' key={ contact }>
+              <div onClick={ ({ target }) => setSearch( target.innerText )} className='contact' key={ contact }>
                 <img src="" alt="" />
                 <span>{ contact }</span>
               </div>

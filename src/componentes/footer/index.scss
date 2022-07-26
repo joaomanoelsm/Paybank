@@ -1,7 +1,9 @@
 .footer {
+    position: relative;
     height: 6rem;
     margin-top: 10rem;
-    background: linear-gradient(to top, $principal-color, rgba(69, 66, 245, 0.459));
+    background: linear-gradient(to top, $principal-color, rgba(69, 66, 245, 0.705));
+    bottom: 0rem;
 
     display: flex;
     align-items: center;

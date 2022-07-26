@@ -1,0 +1,66 @@
+.popup__wallpaper {
+    position: absolute;
+    left: 0; top: 0;
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    background-color: hsla(0, 0%, 13%, 0.144);
+
+    .popup {
+        position: absolute;
+        top: 50%; left: 50%;
+        transform: translate(-50%, -50%);
+
+        padding: 4rem;
+        background-color: white;
+    
+        z-index: 10;
+        box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.24);
+        border-radius: 1rem;
+    
+        h3 {
+            @include text-effect($very-big-font, $very-big-font, $nunito-font, 600, $text-color);
+            margin-bottom: 5rem;
+        }
+    
+        span {
+            @include text-effect($medium-font, $medium-font, $lato-font, 500, $dark-gray);
+    
+            &::after {
+                content: '';
+                display: block;
+                height: 0.2rem;
+                background-color: #616161;
+                margin: 1rem 0 4rem 0;
+            }
+        }
+    
+        .popup__buttons__container {
+            display: flex;
+            justify-content: space-between;
+    
+            .popup__buttons {
+                transition: all .4s;
+                @include text-effect($big-font, $big-font, $nunito-font, 600, white);
+                padding: 1.5rem 4rem;
+                border: none;
+                outline: none;
+                border-radius: 0.6rem;
+                cursor: pointer;
+
+                &:hover {
+                    filter: brightness(120%);
+                }
+            }
+            
+            .popup__buttons__1 {
+                background: linear-gradient(to bottom, #222222, hsla(0, 0%, 13%, 0.705));
+                margin-right: 4rem;
+            }
+    
+            .popup__buttons__2 {
+                background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.705));
+            }
+        }
+    }
+}
