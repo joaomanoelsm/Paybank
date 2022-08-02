@@ -1,0 +1,119 @@
+section.search {
+    width: 100%;
+    overflow: hidden;
+    
+    .search__container {
+        position: relative;
+
+        label {
+            @include text-effect( $very-big-font, $very-big-font, $nunito-font, 600, $text-color );
+            display: block;
+            margin: 12rem 0 10rem 0;
+        }
+    
+        input[type=text] {
+            @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+            margin-bottom: 6rem;
+            background: none;
+            outline: none;
+            
+            width: 100%;
+            height: auto;
+            border-radius: 0.2rem;
+            
+            border-bottom-width: 0.3rem;
+            border-bottom-color: #616161;
+    
+            border-top-color: transparent;
+            border-left-color: transparent;
+            border-right-color: transparent;
+            
+            &::placeholder {
+                @include text-effect( $medium-font, $medium-font, $nunito-font, 500, #616161 );
+            }
+    
+        }
+    
+        .search__image {
+            position: absolute;
+            right: 0; bottom: 6.3rem;
+            width: 5.6rem;
+            height: 3.6rem;
+        }
+    }
+
+    .search__content {
+    
+        h2 {
+            @include text-effect($big-font, $big-font, $nunito-font, 700, $text-color);
+            margin-bottom: 2rem;
+        }
+    
+        .search__list {
+            max-height: 80rem;
+            box-shadow: 0 0.3rem 1rem hsla(0, 0%, 0%, 0.103);
+            border-radius: 0.5rem;
+    
+            .search__add__contact {
+                cursor: pointer;
+                height: 10rem;
+                display: flex;
+                align-items: center;
+
+                &:active span {
+                    color: gray;
+                }
+
+                .search__add__contact__img {
+                    transition: all .4s;
+                    width: 2.6rem;
+                    margin: 0 2rem;
+                }
+                
+                span {
+                    transition: all .4s;
+                    @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+                }
+            }
+    
+            .search__contacts {
+                position: relative;
+                max-height: 80rem;
+                overflow: auto;
+
+                &::after {
+                    content: '';
+                    width: 100%;
+                    height: 0.2rem;
+                    background-color: $light-gray;
+                    
+                    position: absolute;
+                    left: 0; bottom: 0;
+                }
+
+                ul {
+
+                    li {
+                    @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+                    display: flex;
+                    align-items: center;
+
+                    height: 10rem;
+                    list-style: none;
+                    cursor: pointer;
+
+                    &::before {
+                        content: '';
+                        margin: 0 2rem;
+                        display: inline-block;
+                        width: 2rem;
+                        height: 2rem;
+                        background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
+                        border-radius: 50%;
+                        }
+                    }
+                }  
+            }
+        }
+    }
+}
