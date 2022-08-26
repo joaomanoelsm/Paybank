@@ -54,12 +54,26 @@ html {
     margin: auto;
 }
 
-@media (max-width: 1360px) {
-    #main {
-        width: $screen-size-2;
+main {
+    animation: pageAppearance .4s backwards;
+    user-select: none;
+}
+
+@keyframes pageAppearance {
+    0% {
+        transform: translateX(-20%);
     }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@media (max-width: 1360px) {
     html {
         font-size: 43.75%;
+    }
+    #main {
+        width: $screen-size-2;
     }
 }
 
@@ -69,8 +83,4 @@ html {
     }
 }
 
-@media (max-width: 767px) {
-    html {
-        font-size: 30%;
-    }
-}
+

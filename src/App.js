@@ -2,9 +2,10 @@ import Header from './componentes/header/index';
 import Bank from './pages/bank';
 import Receive from './pages/receive';
 import Transfer from './pages/transfer';
+import Loan from './pages/loan';
 import Footer from './componentes/footer';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
-import Loan from './pages/loan';
+import Erro from './pages/erro';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path='receive' element={<Receive />} />
           <Route path='transfer' element={<Transfer />} />
           <Route path='loan' element={<Loan />} />
+          <Route path='*' element={<Erro />} />
         </Routes>
       </main>
       <Footer />
@@ -23,4 +25,4 @@ function App() {
   );
 }
 
-export default App;
+export default App

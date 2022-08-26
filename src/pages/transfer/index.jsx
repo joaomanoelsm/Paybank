@@ -1,14 +1,12 @@
-import React from 'react'
-import Input from '../../componentes/input'
-import Search from '../../componentes/search'
+import React from 'react';
+import Input from '../../componentes/input';
 
 const Transfer = () => {
 
   return (
-    <main id='transfer'>
-        <Input title={'who do you want to transfer to'} />
-        <Search />
-    </main>
+    <section id='transfer'>
+        <Input title={'Who do you want to transfer to'} />
+    </section>
   )
 }
 

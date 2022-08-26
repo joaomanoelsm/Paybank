@@ -1,6 +1,8 @@
 {
-  "name": "banco",
+  "name": "banking",
   "version": "0.1.0",
+  "author": "João Manoel",
+  "description": "My banking website",
   "private": true,
   "dependencies": {
     "@reduxjs/toolkit": "^1.8.3",

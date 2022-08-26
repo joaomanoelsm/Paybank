@@ -9,7 +9,7 @@
         }
     }
 
-    #balance__container {
+    #balance__view {
         display: flex;
         justify-content: space-between;
         align-items: center;
@@ -33,7 +33,7 @@
 
 @media (max-width: 1360px) {
     #balance {
-        #balance__container {
+        #balance__view {
 
             span {
                 max-width: 500px;
@@ -44,7 +44,7 @@
 
 @media (max-width: 767px) {
     #balance {
-        #balance__container {
+        #balance__view {
 
             span {
                 max-width: 200px;

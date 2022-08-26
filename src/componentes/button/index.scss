@@ -1,4 +1,5 @@
 .button-section {
+    z-index: 10;
     margin: auto;
     display: flex;
     justify-content: center;
@@ -14,6 +15,6 @@
     
         background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.692));
         border-radius: 1rem;
-        padding: 2rem 7rem;
+        padding: 2rem 6rem;
     }
 }

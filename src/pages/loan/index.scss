@@ -1,47 +1,50 @@
 #loan {
 
-    #container__select {
+    #loan__select {
         cursor: pointer;
-        margin-bottom: 6rem;
+        margin: 10rem 0 6rem 0;
 
-        #select {
+        #loan__viewer {
             display: flex;
             align-items: center;
             justify-content: space-between;
 
             padding: 0 4rem;
             height: 12.6rem;
-            margin-bottom: 2rem;
 
             border-radius: 1rem;
             box-shadow: 0 0.3rem 1rem 0 hsla(0, 0%, 0%, 0.103);
 
             span {
-                @include text-effect($medium-font, $medium-font, $lato-font, 500, $dark-gray)
+                @include text-effect($medium-font, $medium-font, $lato-font, 500, $dark-gray);
             }
 
             img {
                 width: 3.9rem;
                 height: 2.2rem;
-                transition: all 1s;
+                transition: all .6s;
             }
         }
 
-        #select__itens {
-            transition: all 1s;
+        #loan__parcels {
+            transition: all .3s;
             overflow: auto;
+            margin-top: 2rem;
+
             max-height: 40rem;
             box-shadow: 0 0.3rem 1rem 0 hsla(0, 0%, 0%, 0.103);
             
-            .itens {
+            .loan__parcel {
                 position: relative;
                 padding: 3.3rem 4rem;
+                list-style: none;
                 @include text-effect($medium-font, $medium-font, $lato-font, 500, $dark-gray);
 
                 &::before {
                     content: '';
                     position: absolute;
                     bottom: 0; left: 0;
+                    
                     width: 100%;
                     height: 0.2rem;
                     background-color: $light-gray;
@@ -50,8 +53,9 @@
         }
     }
 
-    #view__money {
+    #loan__info {
         text-align: center;
+        margin-top: 4rem;
 
         span {
             @include text-effect($medium-font, $medium-font, $lato-font, 500, $dark-gray);
@@ -85,8 +89,8 @@
 
 @media (max-width: 400px) {
     #loan {
-        #container__select {
-            #select {
+        #loan__select {
+            #loan__viewer {
     
                 span {
                     font-size: 18px;

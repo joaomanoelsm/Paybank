@@ -1,13 +1,13 @@
 #payments {
     margin: 0 auto 8rem auto;
 
-    #payments__container {
+    #payments__icons {
         display: flex;
         justify-content: space-between;
         overflow-y: hidden;
         overflow-x: auto;
 
-        .payments__icons {
+        .payments__icon {
             display: flex;
             flex-direction: column;
             align-items: center;
@@ -21,7 +21,7 @@
                 margin-top: 1.2rem;
             }
     
-            .payments__wallpapers {
+            .payments__svg {
                 transition: filter .4s;
                 display: flex;
                 align-items: center;

@@ -1,54 +1,84 @@
-import React from 'react';
-import alertIcon from '../../assets/svgs/Alert.svg';
-import { useDispatch } from "react-redux";
-import { add, discount } from '../../store/useSlice';
-import { CreateContext } from '../../store/useContext';
+import React, { useCallback, useEffect, useState } from 'react'
+import { useRef } from 'react'
+import { memo } from 'react'
+import { useSelector } from 'react-redux'
+import { selectUser } from '../../store/useSlice'
+import { filterNumericKeycaps, filterLetterKeycaps } from '../../utils'
+import Button from '../button'
+import Currency from './currency'
+import Search from './search'
 
 const Input = ({ title }) => {
-    const [ input, setInput ] = React.useState(0)
-    const [ warning, setWarning ] = React.useState(false)
-    const inputRef = React.useRef()
+    const [ warningCurrency, setWarningCurrency ] = useState(false)
+    const [ warningSearch, setWarningSearch ] = useState(false)
 
-    let { balance } = React.useContext(CreateContext)
-  
-    const dispatch = useDispatch()
-    
-    const handleLogin = () => {
-        dispatch(add(Number(input)))
-    }
-  
-    React.useEffect( () => {
+    const [ warningText, setWarningText ] = useState('')
 
-        inputRef.current.addEventListener('keyup', (e) => {
-            if (e.key === 'Enter') {
-                if (Number(input)) {
-                    setWarning(false)
-                } else {
-                    setWarning(true)
-                }
-            }
-        })
+    const [ inputCurrency, setInputCurrency ] = useState(0)
+    const [ inputSearch, setInputSearch ] = useState('')
 
-        inputRef.current.onblur = () => {
-            if (Number(input)) {
-                setWarning(false)
+    const inputCurrencyRef = useRef(null)
+    const inputSearchRef = useRef(null)
+    const buttonRef = useRef(null)
+
+    const store = useSelector(selectUser)
+
+    const rulesForNumericInput = useCallback( () => {
+        const currentPage = window.location.pathname
+        const insufficientFunds = store.balance - inputCurrency < 0
+        const transactionLimit = inputCurrency > 10000
+        
+        if ( insufficientFunds && currentPage === '/transfer' ) {
+            setWarningCurrency( true )
+            setWarningText('You do not have money for the transfer')
+        } else if ( transactionLimit ) {
+            setWarningCurrency( true )
+            setWarningText('The maximum value is 10,000')
+        } else {
+            setWarningCurrency( false )
+        }
+    }, [ store.balance, inputCurrency ])
+
+    useEffect( () => {
+        inputCurrencyRef.current.value = null
+
+        rulesForNumericInput()
+
+        inputCurrencyRef.current.onkeydown = ( e ) => {
+            if (e.key === 'Enter') inputSearchRef.current.focus()
+            filterNumericKeycaps( e )
+        }
+    }, [ rulesForNumericInput, inputCurrency ])
+
+    const filterContacts = useCallback( () => {
+        const filteredContacts = store.contactArray.some( contact => inputSearch === contact.name )
+
+        if ( inputSearch ) {
+            if ( filteredContacts ) {
+                setWarningSearch(false)
             } else {
-                setWarning(true)
+                setWarningSearch(true)
             }
         }
-        
-    }, [ inputRef, input ])
+    }, [ store.contactArray, inputSearch ])
+
+    useEffect( () => {
+
+        filterContacts()
+
+        inputSearchRef.current.onkeydown = ( e ) => {
+            if (e.key === 'Enter') buttonRef.current.click()
+            filterLetterKeycaps( e )
+        }
+    }, [ filterContacts ])
 
     return (
-        <section className='search__container'>
-            <label onClick={ handleLogin }  htmlFor="">{ title }</label>
-            <input ref={ inputRef } onChange={ ({ target }) => setInput(target.value)} value={ input } className='input' placeholder='R$' type="text" />
-            { warning ? <div className='warning'>
-                <img src={ alertIcon } alt="" />
-                <span>Aviso: O formulário só aceita números</span>
-            </div> : ''}
-        </section>
+        <>
+            <Currency title={'Who do you want to transfer to'} setWarningText={ setWarningText } warningText={ warningText } inputCurrency={ inputCurrency } setInputCurrency={ setInputCurrency } setWarningCurrency={ setWarningCurrency } warningCurrency={ warningCurrency } inputCurrencyRef={ inputCurrencyRef } />
+            <Search inputSearch={ inputSearch } setInputSearch={ setInputSearch } setWarningSearch={ setWarningSearch} warningSearch={ warningSearch } inputSearchRef={ inputSearchRef } />
+            { inputSearch && inputCurrency > 0 && <Button inputCurrency={ inputCurrency } warningCurrency={ warningCurrency } warningSearch={ warningSearch } buttonRef={ buttonRef } inputSearch={ inputSearch } /> }
+        </>
     )
 }
 
-export default Input
+export default memo(Input)

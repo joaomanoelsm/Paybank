@@ -8,12 +8,12 @@ section.search {
         label {
             @include text-effect( $very-big-font, $very-big-font, $nunito-font, 600, $text-color );
             display: block;
+            line-height: 6.4rem;
             margin: 12rem 0 10rem 0;
         }
     
-        input[type=text] {
+        .search__input {
             @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
-            margin-bottom: 6rem;
             background: none;
             outline: none;
             
@@ -33,16 +33,10 @@ section.search {
             }
     
         }
-    
-        .search__image {
-            position: absolute;
-            right: 0; bottom: 6.3rem;
-            width: 5.6rem;
-            height: 3.6rem;
-        }
     }
 
     .search__content {
+        margin-top: 6rem;
     
         h2 {
             @include text-effect($big-font, $big-font, $nunito-font, 700, $text-color);
@@ -60,9 +54,13 @@ section.search {
                 display: flex;
                 align-items: center;
 
-                &:active span {
-                    color: gray;
-                }
+                &:hover {
+                    background-color: $light-gray;
+                }   
+
+                &:hover span {
+                    color: $principal-color;
+                }   
 
                 .search__add__contact__img {
                     transition: all .4s;
@@ -94,23 +92,28 @@ section.search {
                 ul {
 
                     li {
-                    @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
-                    display: flex;
-                    align-items: center;
+                        @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+                        display: flex;
+                        align-items: center;
 
-                    height: 10rem;
-                    list-style: none;
-                    cursor: pointer;
+                        height: 10rem;
+                        list-style: none;
+                        cursor: pointer;
 
-                    &::before {
-                        content: '';
-                        margin: 0 2rem;
-                        display: inline-block;
-                        width: 2rem;
-                        height: 2rem;
-                        background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
-                        border-radius: 50%;
-                        }
+                        &::before {
+                            content: '';
+                            margin: 0 2rem;
+                            display: inline-block;
+                            width: 2rem;
+                            height: 2rem;
+                            background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
+                            border-radius: 50%;
+                            }
+
+                        &:hover {
+                            color: $principal-color;
+                            background-color: $light-gray;
+                        }   
                     }
                 }  
             }
