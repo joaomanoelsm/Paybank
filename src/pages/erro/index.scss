@@ -5,7 +5,6 @@
     
     flex-direction: column;
     text-align: center;
-    height: auto;
 
     #erro__number {
         @include text-effect(30rem, 30rem, $lato-font, 700, $principal-color);
@@ -42,8 +41,7 @@
 }
 
 @media (max-width: 768px) and (orientation: portrait) {
-    .erro {
-        height: 100vh;
-        justify-self: center;
+    #erro {
+        height: 80vh;
     }
 }

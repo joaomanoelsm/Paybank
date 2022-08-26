@@ -23,7 +23,9 @@ const Input = ({ title }) => {
 
     const store = useSelector(selectUser)
 
-    const rulesForNumericInput = useCallback( () => {
+    useEffect( () => {
+        inputCurrencyRef.current.value = null
+
         const currentPage = window.location.pathname
         const insufficientFunds = store.balance - inputCurrency < 0
         const transactionLimit = inputCurrency > 10000
@@ -37,20 +39,14 @@ const Input = ({ title }) => {
         } else {
             setWarningCurrency( false )
         }
-    }, [ store.balance, inputCurrency ])
-
-    useEffect( () => {
-        inputCurrencyRef.current.value = null
-
-        rulesForNumericInput()
 
         inputCurrencyRef.current.onkeydown = ( e ) => {
             if (e.key === 'Enter') inputSearchRef.current.focus()
             filterNumericKeycaps( e )
         }
-    }, [ rulesForNumericInput, inputCurrency ])
+    }, [ inputCurrency, store.balance ])
 
-    const filterContacts = useCallback( () => {
+    useEffect( () => {
         const filteredContacts = store.contactArray.some( contact => inputSearch === contact.name )
 
         if ( inputSearch ) {
@@ -60,17 +56,12 @@ const Input = ({ title }) => {
                 setWarningSearch(true)
             }
         }
-    }, [ store.contactArray, inputSearch ])
-
-    useEffect( () => {
-
-        filterContacts()
 
         inputSearchRef.current.onkeydown = ( e ) => {
             if (e.key === 'Enter') buttonRef.current.click()
             filterLetterKeycaps( e )
         }
-    }, [ filterContacts ])
+    }, [ inputSearch, store.contactArray ])
 
     return (
         <>

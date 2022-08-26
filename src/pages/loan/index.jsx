@@ -4,7 +4,7 @@ import { useNavigate } from 'react-router-dom';
 import arrowIcon from '../../assets/svgs/Arrow.svg';
 import Currency from '../../componentes/input/currency';
 import Warning from '../../componentes/warning';
-import { add } from '../../store/useSlice';
+import { add, decrease } from '../../store/useSlice';
 import { filterNumericKeycaps } from '../../utils';
 
 const Loan = () => {
@@ -99,8 +99,10 @@ const Loan = () => {
 
     useEffect( () => {
         inputCurrencyRef.current.value = null
+        
+        const transactionLimit = inputCurrency > 10000
 
-        if ( inputCurrency > 10000) {
+        if ( transactionLimit ) {
             setWarning(true)
             setWarningText('The maximum value is 10,000')
         } else {
@@ -120,14 +122,24 @@ const Loan = () => {
         if (name !== '--Select the parcel--') setWarning(false)
     }, [ name ])
 
+    const collectInstallment = () => { 
+        const parcelNumber = Number( name.slice(0, 2) )
+        const installmentValue = Number( total / parcelNumber )
+
+        for (let i = 1; i < parcelNumber + 1; i++) {
+            const paymentTime = 3000 * i
+            setTimeout( () => dispatch(decrease( installmentValue )), paymentTime )
+        }
+    }
+
     const addLoanAmount = () => {
         const invalidInstallment = name === '--Select the parcel--'
 
         if ( invalidInstallment || warning ) setWarning(true)
         else {
-            setWarning(false)
-            dispatch(add(Number(total)))
+            dispatch(add(Number( inputCurrency )))
             navigate('/')
+            collectInstallment()
         }
     }
 

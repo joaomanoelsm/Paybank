@@ -33,9 +33,9 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
   } 
   
   return (
-    <section className='button-section'>
+    <div className='button-section'>
       <button ref={ buttonRef } onClick={ sendBalance } className='button-section__button'>Confirmar</button>
-    </section>
+    </div>
   )
 }
 

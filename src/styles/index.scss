@@ -54,14 +54,14 @@ html {
     margin: auto;
 }
 
-main {
+section {
     animation: pageAppearance .4s backwards;
     user-select: none;
 }
 
 @keyframes pageAppearance {
     0% {
-        transform: translateX(-20%);
+        transform: translateX(-10%);
     }
     100% {
         transform: translateX(0%);
