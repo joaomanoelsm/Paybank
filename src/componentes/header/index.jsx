@@ -1,17 +1,18 @@
 import React from 'react'
 import profileSvg from '../../assets/svgs/profile.svg'
+import LogoSvg from '../../assets/svgs/Logo.svg'
+import { NavLink } from 'react-router-dom'
 
 const Header = () => {
+
   return (
     <header id='header'>
-        <div id='header__color'></div>
+        <div id='header__background'></div>
         <nav id='header__nav'>
-            <div id='header__menu'>
-              <div className='header__menu__tickness__1 header__menu__tickness'></div>
-              <div className='header__menu__tickness__2 header__menu__tickness'></div>
-              <div className='header__menu__tickness__3 header__menu__tickness'></div>
-            </div>
-            <img id='header__profile' src={ profileSvg } alt="" />
+            <NavLink id='header__logo' to='/'>
+                <img src={ LogoSvg } alt="Logo do banco" />
+            </NavLink>
+            <img id='header__profile' src={ profileSvg } alt="Perfil" />
         </nav>
     </header>
   )

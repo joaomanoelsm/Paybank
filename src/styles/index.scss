@@ -7,14 +7,17 @@ $warning-color: #F54040;
 $secondary-warning-color: #FE9D9D;
 
 /*Font*/
-$bold-font: 48px;
-$medium-font: 32px;
-$light-font: 24px;
+$very-big-font: 6.4rem;
+$big-font: 4.8rem;
+$medium-font: 3.2rem;
+$small-font: 2.4rem;
 $nunito-font: 'Nunito';
-$lato-font: 'lato';
+$lato-font: 'Lato';
 
-/*Scree*/
-$screen-size: 1260px;
+/*Screen*/
+$screen-size-1: 1260px;
+$screen-size-2: 882px;
+$screen-size-3: 85%;
 
 * {
     margin: 0;
@@ -23,13 +26,13 @@ $screen-size: 1260px;
     font-family: 'Nunito', 'Lato', sans-serif;
 }
 
-body {
-    width: 100vw;
-    height: 100vh;
+html {
+    font-size: 62.5%;
 }
 
-@mixin text-effect($font, $family, $weight, $color) {
+@mixin text-effect($font, $lineHeight, $family, $weight, $color) {
     font-size: $font;
+    line-height: $lineHeight;
     font-family: $family, Arial, Helvetica, sans-serif;
     font-weight: $weight;
     color: $color;
@@ -44,3 +47,40 @@ body {
     background-color: #a1a1a1;
     border-radius: 4px;
 }
+
+#main {
+    max-width: $screen-size-1;
+    width: 100%;
+    margin: auto;
+}
+
+section {
+    animation: pageAppearance .4s backwards;
+    user-select: none;
+}
+
+@keyframes pageAppearance {
+    0% {
+        transform: translateX(-10%);
+    }
+    100% {
+        transform: translateX(0%);
+    }
+}
+
+@media (max-width: 1360px) {
+    html {
+        font-size: 43.75%;
+    }
+    #main {
+        width: $screen-size-2;
+    }
+}
+
+@media (max-width: 1023px) {
+    #main {
+        width: $screen-size-3;
+    }
+}
+
+

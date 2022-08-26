@@ -1,0 +1,36 @@
+section.search {
+    overflow: hidden;
+
+    label {
+        @include text-effect($very-big-font, $very-big-font, $nunito-font, 600, $text-color );
+        line-height: 6.4rem;
+        display: block;
+        margin: 12rem 0 10rem 0;
+    }
+
+    .search__input {
+        background: none;
+        outline: none;
+
+        width: 100%;
+        height: auto;
+        border-radius: 0.2rem;
+        
+        border-bottom-width: 0.3rem;
+        border-bottom-color: #616161;
+
+        border-top-color: transparent;
+        border-left-color: transparent;
+        border-right-color: transparent;
+
+        @include text-effect($medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+
+        
+        &::placeholder {
+            @include text-effect($medium-font, $medium-font, $nunito-font, 500, #616161 );
+        }
+
+    }
+
+}
+
