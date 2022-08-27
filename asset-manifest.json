@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Paybank/static/css/main.cdb8a6b8.css",
-    "main.js": "/Paybank/static/js/main.741759fe.js",
+    "main.js": "/Paybank/static/js/main.42c86f30.js",
     "static/media/Logo.svg": "/Paybank/static/media/Logo.6305b9b6a09d08704537dbd071db4edc.svg",
     "static/media/Loan-icon.svg": "/Paybank/static/media/Loan-icon.ceb0a2587e900bc43d8921785689f977.svg",
     "static/media/Deposit-icon.svg": "/Paybank/static/media/Deposit-icon.bb4b624a489eb8d3f065081bb6bf5c51.svg",
@@ -19,10 +19,10 @@
     "static/media/More.svg": "/Paybank/static/media/More.e63b83d41b1d116b9e1266144d109fe3.svg",
     "static/media/Less.svg": "/Paybank/static/media/Less.504eece8962fec8c2f248f4f3db26980.svg",
     "main.cdb8a6b8.css.map": "/Paybank/static/css/main.cdb8a6b8.css.map",
-    "main.741759fe.js.map": "/Paybank/static/js/main.741759fe.js.map"
+    "main.42c86f30.js.map": "/Paybank/static/js/main.42c86f30.js.map"
   },
   "entrypoints": [
     "static/css/main.cdb8a6b8.css",
-    "static/js/main.741759fe.js"
+    "static/js/main.42c86f30.js"
   ]
 }
