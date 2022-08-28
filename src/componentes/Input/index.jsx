@@ -30,7 +30,7 @@ const Input = ({ title }) => {
         const insufficientFunds = store.balance - inputCurrency < 0
         const transactionLimit = inputCurrency > 10000
         
-        if ( insufficientFunds && currentPage === '/transfer' ) {
+        if ( insufficientFunds && currentPage === '/Paybank/transfer' ) {
             setWarningCurrency( true )
             setWarningText('You do not have money for the transfer')
         } else if ( transactionLimit ) {

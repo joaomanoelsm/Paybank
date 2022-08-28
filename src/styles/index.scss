@@ -48,6 +48,12 @@ html {
     border-radius: 4px;
 }
 
+#root {
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
 #main {
     max-width: $screen-size-1;
     width: 100%;

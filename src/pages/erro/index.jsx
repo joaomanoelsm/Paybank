@@ -9,7 +9,7 @@ const Erro = () => {
     <section id='erro'>
       <h2 id='erro__number'>404</h2>
       <span id='erro__warning'>Page not found</span>
-        <button onClick={ () => navigate('/') } id='erro__button'>
+        <button onClick={ () => navigate('/Paybank') } id='erro__button'>
           Voltar
           <img src={ arrowBackSvg } alt="" />
         </button>

@@ -9,7 +9,7 @@ const Header = () => {
     <header id='header'>
         <div id='header__background'></div>
         <nav id='header__nav'>
-            <NavLink id='header__logo' to='/'>
+            <NavLink id='header__logo' to='/Paybank'>
                 <img src={ LogoSvg } alt="Logo do banco" />
             </NavLink>
             <img id='header__profile' src={ profileSvg } alt="Perfil" />

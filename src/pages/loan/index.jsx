@@ -138,7 +138,7 @@ const Loan = () => {
         if ( invalidInstallment || warning ) setWarning(true)
         else {
             dispatch(add(Number( inputCurrency )))
-            navigate('/')
+            navigate('/Paybank')
             collectInstallment()
         }
     }

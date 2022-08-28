@@ -13,10 +13,10 @@ function App() {
       <Header />
       <main id='main'>
         <Routes>
-          <Route path='/' element={<Bank />} />
-          <Route path='receive' element={<Receive />} />
-          <Route path='transfer' element={<Transfer />} />
-          <Route path='loan' element={<Loan />} />
+          <Route path='/Paybank' element={<Bank />} />
+          <Route path='/Paybank/receive' element={<Receive />} />
+          <Route path='/Paybank/transfer' element={<Transfer />} />
+          <Route path='/Paybank/loan' element={<Loan />} />
           <Route path='*' element={<Erro />} />
         </Routes>
       </main>

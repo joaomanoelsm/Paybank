@@ -17,7 +17,7 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
   const currentDate = `${day}/${month}`
 
   const defineMethod  = () => {
-    currentPage === 'receive' ? dispatch(add(Number(inputCurrency))) : dispatch(decrease(Number(inputCurrency)))
+    currentPage === '/Paybank/receive' ? dispatch(add(Number(inputCurrency))) : dispatch(decrease(Number(inputCurrency)))
 
     console.log( currentPage )
 
@@ -28,7 +28,7 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
     if (!warningCurrency && !warningSearch) {
       defineMethod()
       dispatch(resetData())
-      navigate('/')
+      navigate('/Paybank')
     }
   } 
   
