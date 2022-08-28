@@ -12,13 +12,13 @@ const Loan = () => {
     const dispatch = useDispatch()
 
     const [ inputCurrency, setInputCurrency ] = useState(0)
-    const [ warningText, setWarningText ] = useState('The maximum value is 10,000')
-
     const [ appearAplots, setAppearAplots ] = useState(false)
+
+    const [ warningText, setWarningText ] = useState('The maximum value is 10,000')
     const [ warning, setWarning ] = useState(false)
 
     const [ name, setName ] = useState('--Select the parcel--')
-    const [ total, setTotal ] = useState( inputCurrency )
+    const [ total, setTotal ] = useState( 0.00 )
 
     const parcels = [
         {

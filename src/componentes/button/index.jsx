@@ -17,9 +17,7 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
   const currentDate = `${day}/${month}`
 
   const defineMethod  = () => {
-    currentPage === '/Paybank/receive' ? dispatch(add(Number(inputCurrency))) : dispatch(decrease(Number(inputCurrency)))
-
-    console.log( currentPage )
+    currentPage === 'Paybank/receive' ? dispatch(add(Number(inputCurrency))) : dispatch(decrease(Number(inputCurrency)))
 
     dispatch(setTransaction({name: inputSearch, id: store.contactsTransactions.length + 1, method: currentPage, value: inputCurrency, date: currentDate }))
   }
