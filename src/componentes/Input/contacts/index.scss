@@ -1,0 +1,84 @@
+.search__content {
+    margin-top: 6rem;
+
+    h2 {
+        @include text-effect($big-font, $big-font, $nunito-font, 700, $text-color);
+        margin-bottom: 2rem;
+    }
+
+    .search__list {
+        max-height: 80rem;
+        box-shadow: 0 0.3rem 1rem hsla(0, 0%, 0%, 0.103);
+        border-radius: 0.5rem;
+
+        .search__add__contact {
+            cursor: pointer;
+            height: 10rem;
+            display: flex;
+            align-items: center;
+
+            &:hover {
+                background-color: $light-gray;
+            }   
+
+            &:hover span {
+                color: $principal-color;
+            }   
+
+            .search__add__contact__img {
+                transition: all .4s;
+                width: 2.6rem;
+                margin: 0 2rem;
+            }
+            
+            span {
+                transition: all .4s;
+                @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+            }
+        }
+
+        .search__contacts {
+            position: relative;
+            max-height: 80rem;
+            overflow: auto;
+
+            &::after {
+                content: '';
+                width: 100%;
+                height: 0.2rem;
+                background-color: $light-gray;
+                
+                position: absolute;
+                left: 0; bottom: 0;
+            }
+
+            ul {
+
+                li {
+                    @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+                    display: flex;
+                    align-items: center;
+
+                    height: 10rem;
+                    list-style: none;
+                    cursor: pointer;
+
+                    &::before {
+                        content: '';
+                        margin: 0 2rem;
+                        display: inline-block;
+                        width: 2rem;
+                        height: 2rem;
+                        background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
+                        border-radius: 50%;
+                        }
+
+                    &:hover {
+                        color: $principal-color;
+                        background-color: $light-gray;
+                    }   
+                }
+            }  
+        }
+    }
+}

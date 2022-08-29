@@ -61,11 +61,11 @@ html {
 }
 
 section {
-    animation: pageAppearance .4s backwards;
+    animation: appearPage .4s backwards;
     user-select: none;
 }
 
-@keyframes pageAppearance {
+@keyframes appearPage {
     0% {
         transform: translateX(-10%);
     }

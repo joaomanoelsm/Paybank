@@ -1,10 +1,11 @@
-import React, { useCallback, useEffect, useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useRef } from 'react'
 import { memo } from 'react'
 import { useSelector } from 'react-redux'
 import { selectUser } from '../../store/useSlice'
 import { filterNumericKeycaps, filterLetterKeycaps } from '../../utils'
 import Button from '../button'
+import Contacts from './contacts'
 import Currency from './currency'
 import Search from './search'
 
@@ -68,6 +69,7 @@ const Input = ({ title }) => {
             <Currency title={'Who do you want to transfer to'} setWarningText={ setWarningText } warningText={ warningText } inputCurrency={ inputCurrency } setInputCurrency={ setInputCurrency } setWarningCurrency={ setWarningCurrency } warningCurrency={ warningCurrency } inputCurrencyRef={ inputCurrencyRef } />
             <Search inputSearch={ inputSearch } setInputSearch={ setInputSearch } setWarningSearch={ setWarningSearch} warningSearch={ warningSearch } inputSearchRef={ inputSearchRef } />
             { inputSearch && inputCurrency > 0 && <Button inputCurrency={ inputCurrency } warningCurrency={ warningCurrency } warningSearch={ warningSearch } buttonRef={ buttonRef } inputSearch={ inputSearch } /> }
+            <Contacts setInputSearch={ setInputSearch } />
         </>
     )
 }

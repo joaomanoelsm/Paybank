@@ -1,0 +1,24 @@
+#credit-card {
+
+    h2 {
+        @include text-effect( $very-big-font, $very-big-font, $nunito-font, 700, $text-color );
+        margin-bottom: 6rem;
+    }
+
+    #credit-card__add {
+        cursor: pointer;
+        padding: 4rem;
+        border-radius: 1rem;
+        box-shadow: 0 0.3rem 1rem 0 hsla(0, 0%, 0%, 0.103);
+
+        img {
+            width: 2.6rem;
+            height: 2.6rem;
+        }
+
+        span {
+            @include text-effect( $medium-font, $medium-font, $nunito-font, 600, $dark-gray );
+            margin-left: 2rem;
+        }
+    }
+}

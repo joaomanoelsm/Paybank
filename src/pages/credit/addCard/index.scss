@@ -1,0 +1,32 @@
+#add-card {
+
+    #add-card__cards-container {
+        margin-top: 10rem;
+
+        h2 {
+            @include text-effect( $very-big-font, $very-big-font, $nunito-font, 700, $text-color );
+            margin-bottom: 6rem;
+        }
+
+        #add-card__cards {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            overflow: auto;
+            width: 100%;
+        }
+    }
+}
+
+@media (max-width: 1023px) {
+    #add-card {
+
+        #add-card__cards-container {
+            
+            #add-card__cards {
+                flex-wrap: nowrap;
+                justify-content: start;
+            }
+        }
+    }
+}
