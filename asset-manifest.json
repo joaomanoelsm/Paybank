@@ -1,14 +1,12 @@
 {
   "files": {
-    "main.css": "/Paybank/static/css/main.09c06b10.css",
-    "main.js": "/Paybank/static/js/main.f4e1dcee.js",
-    "static/media/Logo.svg": "/Paybank/static/media/Logo.6305b9b6a09d08704537dbd071db4edc.svg",
+    "main.css": "/Paybank/static/css/main.51ff0d5d.css",
+    "main.js": "/Paybank/static/js/main.c48aa6f9.js",
     "static/media/Loan-icon.svg": "/Paybank/static/media/Loan-icon.ceb0a2587e900bc43d8921785689f977.svg",
+    "static/media/Sun.svg": "/Paybank/static/media/Sun.eb93499bcdb592e17a52738be249329d.svg",
+    "static/media/Moon.svg": "/Paybank/static/media/Moon.19deeed6cc7cbeaf225fcbc6f8abf30b.svg",
     "static/media/Deposit-icon.svg": "/Paybank/static/media/Deposit-icon.bb4b624a489eb8d3f065081bb6bf5c51.svg",
-    "static/media/profile.svg": "/Paybank/static/media/profile.4f3a5f7d67a5720a184037e1d430831e.svg",
-    "static/media/visibility_off.svg": "/Paybank/static/media/visibility_off.a1bbebe84b972ce1d650e7c3a4b26aea.svg",
     "static/media/Alert.svg": "/Paybank/static/media/Alert.f7e99b2a3188928f94a664998b7faf56.svg",
-    "static/media/visibility.svg": "/Paybank/static/media/visibility.12e2f329ea9490637119cd857dcff436.svg",
     "static/media/Transfer-icon.svg": "/Paybank/static/media/Transfer-icon.0fb0bec538cc502ebca2b2f20d763011.svg",
     "static/media/Pay-icon.svg": "/Paybank/static/media/Pay-icon.75f3c733e2f6a5fab7e7ad4cad0fc418.svg",
     "index.html": "/Paybank/index.html",
@@ -18,11 +16,11 @@
     "static/media/Add.svg": "/Paybank/static/media/Add.331c51bc39aa6b13c860a1fcc83fdbbc.svg",
     "static/media/More.svg": "/Paybank/static/media/More.e63b83d41b1d116b9e1266144d109fe3.svg",
     "static/media/Less.svg": "/Paybank/static/media/Less.504eece8962fec8c2f248f4f3db26980.svg",
-    "main.09c06b10.css.map": "/Paybank/static/css/main.09c06b10.css.map",
-    "main.f4e1dcee.js.map": "/Paybank/static/js/main.f4e1dcee.js.map"
+    "main.51ff0d5d.css.map": "/Paybank/static/css/main.51ff0d5d.css.map",
+    "main.c48aa6f9.js.map": "/Paybank/static/js/main.c48aa6f9.js.map"
   },
   "entrypoints": [
-    "static/css/main.09c06b10.css",
-    "static/js/main.f4e1dcee.js"
+    "static/css/main.51ff0d5d.css",
+    "static/js/main.c48aa6f9.js"
   ]
 }
