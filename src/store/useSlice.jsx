@@ -58,7 +58,8 @@ const initialState = {
             value: 4700,
             date: '06/12'
         }
-    ]
+    ],
+    themeToggle: true
 }
 
 export const slice = createSlice({
@@ -95,11 +96,14 @@ export const slice = createSlice({
 
         setWarningSearch( state, { payload }) {
             return { ...state, warningSearch: payload}
+        },
+        setThemeToggle(state) {
+            return { ...state, themeToggle: !state.themeToggle }
         }
     }
 })
 
-export const { add, decrease, setPopup, setCurrency, addContact, setTransaction, resetData, setWarningCurrency, setWarningSearch } = slice.actions
+export const { add, decrease, setPopup, setCurrency, addContact, setTransaction, resetData, setWarningCurrency, setWarningSearch, setThemeToggle } = slice.actions
 
 export const selectUser = (state) => state.user
 

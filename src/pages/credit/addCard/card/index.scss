@@ -1,4 +1,4 @@
-#card {
+.card {
     font-size: 10px;
     width: 39em;
     height: 22.5em;
@@ -20,7 +20,7 @@
             margin-bottom: 2em;
 
             #card__logo {
-                @include text-effect( $small-font, $small-font, $nunito-font, 700, white );
+                @include text-effect( $small-font, $small-font, $nunito-font, 700, var( --background-color ) );
                 
                 .card__logo--purple {
                     color: #4440F3;
@@ -116,7 +116,7 @@
         }
 
         span {
-            @include text-effect( $small-font, $small-font, $nunito-font, 600, white );
+            @include text-effect( $small-font, $small-font, $nunito-font, 600, var( --background-color ) );
         }
     }
 
@@ -191,6 +191,13 @@
         background: linear-gradient(to right, #29270C, #F1F540, #3E3D24);
     }
     
+}
+
+.card--select {
+    transition: all .4s;
+    transform: scale(0.9);
+    border: 0.4rem solid var( --background-color );
+    box-shadow: 0px 0px 0px 0.3rem var( --main-text-color );
 }
 
 @media (max-width: 1360px) {

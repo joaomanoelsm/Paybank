@@ -5,7 +5,7 @@
         margin-bottom: 3.2rem;
 
         h2 {
-            @include text-effect($big-font, $big-font, $nunito-font, 700, $text-color);
+            @include text-effect( $big-font, $big-font, $nunito-font, 700, var( --main-text-color ) );
         }
     }
 
@@ -20,17 +20,25 @@
         box-shadow: 0px 3px 10px rgba(0, 0, 0, 0.103);
 
         span {
-            @include text-effect($medium-font, $medium-font, $nunito-font, 600, $text-color);
+            @include text-effect( $medium-font, $medium-font, $nunito-font, 600, var( --main-text-color ) );
             max-width: 800px;
         }
 
-        img {
+        .balance__icon {
             width: 4.2rem;
             cursor: pointer;
         }
+
+        .balance__icon--dark-mode path {
+            fill: var( --main-text-color );
+        }
+
+        .balance__icon--light-mode path {
+            fill: var( --main-text-color );
+        }
+
     }
 }
-
 @media (max-width: 1360px) {
     #balance {
         #balance__view {

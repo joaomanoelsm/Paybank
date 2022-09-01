@@ -2,7 +2,7 @@
     margin-top: 6rem;
 
     h2 {
-        @include text-effect($big-font, $big-font, $nunito-font, 700, $text-color);
+        @include text-effect( $big-font, $big-font, $nunito-font, 700, var( --main-text-color ) );
         margin-bottom: 2rem;
     }
 
@@ -18,11 +18,11 @@
             align-items: center;
 
             &:hover {
-                background-color: $light-gray;
+                background-color: var( --fourth-text-color );
             }   
 
             &:hover span {
-                color: $principal-color;
+                color: var( --main-color );
             }   
 
             .search__add__contact__img {
@@ -33,7 +33,7 @@
             
             span {
                 transition: all .4s;
-                @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+                @include text-effect( $medium-font, $medium-font, $nunito-font, 500, var( --second-text-color ) );
             }
         }
 
@@ -46,7 +46,7 @@
                 content: '';
                 width: 100%;
                 height: 0.2rem;
-                background-color: $light-gray;
+                background-color: var( --fourth-text-color );
                 
                 position: absolute;
                 left: 0; bottom: 0;
@@ -55,7 +55,7 @@
             ul {
 
                 li {
-                    @include text-effect( $medium-font, $medium-font, $nunito-font, 500, $dark-gray );
+                    @include text-effect( $medium-font, $medium-font, $nunito-font, 500, var( --second-text-color ) );
                     display: flex;
                     align-items: center;
 
@@ -69,13 +69,13 @@
                         display: inline-block;
                         width: 2rem;
                         height: 2rem;
-                        background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.514));
+                        background: linear-gradient( to bottom, var( --main-color ), var( --light-main-color ) );
                         border-radius: 50%;
                         }
 
                     &:hover {
-                        color: $principal-color;
-                        background-color: $light-gray;
+                        color: var( --main-color );
+                        background-color: var( --fourth-text-color );
                     }   
                 }
             }  

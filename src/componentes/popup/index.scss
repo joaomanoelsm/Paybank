@@ -16,19 +16,19 @@
         transform: translate(-50%, -50%);
 
         padding: 4rem;
-        background-color: white;
+        background-color: var( --background-color );
     
         width: 60rem;
         box-shadow: 0 0 0.4rem 0 rgba(0, 0, 0, 0.24);
         border-radius: 1rem;
     
         h3 {
-            @include text-effect($very-big-font, $very-big-font, $nunito-font, 600, $text-color);
+            @include text-effect( $very-big-font, $very-big-font, $nunito-font, 600, var( --main-text-color ) );
             margin-bottom: 5rem;
         }
         
         input {
-            @include text-effect($medium-font, $medium-font, $lato-font, 500, $dark-gray);
+            @include text-effect( $medium-font, $medium-font, $lato-font, 500, var( --second-text-color ) );
             background: none;
             outline: none;
             margin: 1rem 0 4rem 0;
@@ -38,7 +38,7 @@
             border-radius: 0.2rem;
             
             border-bottom-width: 0.3rem;
-            border-bottom-color: #616161;
+            border-bottom-color: var( --third-text-color );
     
             border-top-color: transparent;
             border-left-color: transparent;
@@ -51,7 +51,7 @@
     
             .popup__buttons {
                 transition: all .4s;
-                @include text-effect($big-font, $big-font, $nunito-font, 600, white);
+                @include text-effect( $big-font, $big-font, $nunito-font, 600, white );
                 padding: 1.5rem 0;
                 display: flex;
                 justify-content: center;
@@ -73,7 +73,7 @@
             }
     
             .popup__buttons__2 {
-                background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.705));
+                background: linear-gradient( to bottom, var( --main-color ), var( --light-main-color ) );
             }
         }
     }

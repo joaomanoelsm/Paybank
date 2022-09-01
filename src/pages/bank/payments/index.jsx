@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 
 import creditIcon from '../../../assets/svgs/Credit-icon.svg';
 import depositIcon from '../../../assets/svgs/Deposit-icon.svg';
@@ -10,12 +10,13 @@ import { useNavigate } from 'react-router-dom'
 import Popup from '../../../componentes/popup';
 import { useDispatch, useSelector } from 'react-redux/es/exports';
 import { selectUser, setPopup } from '../../../store/useSlice';
+import { useRef } from 'react';
 
 const Payments = () => {
     const navigate = useNavigate()
     const dispatch = useDispatch()
     
-    const store = useSelector(selectUser)
+    const { popup, themeToggle } = useSelector(selectUser)
 
     const icons = [{
         img: payIcon,
@@ -38,6 +39,9 @@ const Payments = () => {
         name: 'Loan'
     }]
 
+    useEffect( () => {
+    }, [ themeToggle ])
+
     const navigateFilter = ( url ) => url === 'deposit' ? dispatch(setPopup(true)) : navigate( url )
 
     return (
@@ -54,7 +58,7 @@ const Payments = () => {
                     )
                 })}
             </div>
-            { store.popup && <Popup title={'Valor do depósito'} method={'number'} buttonName={['Cancelar', 'Enviar']}  /> }
+            { popup && <Popup title={'Valor do depósito'} method={'number'} buttonName={['Cancelar', 'Enviar']}  /> }
         </section>
     )
 }

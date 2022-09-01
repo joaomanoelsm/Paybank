@@ -7,12 +7,12 @@
     text-align: center;
 
     #erro__number {
-        @include text-effect(30rem, 30rem, $lato-font, 700, $principal-color);
+        @include text-effect(30rem, 30rem, $lato-font, 700, var( --main-color ));
         margin-bottom: 2rem
     }
 
     #erro__warning {
-        @include text-effect(9.6rem, 9.6rem, $nunito-font, 700, $text-color);
+        @include text-effect(9.6rem, 9.6rem, $nunito-font, 700, var( --main-text-color ));
         margin-bottom: 4rem
     }
 
@@ -23,11 +23,11 @@
 
         cursor: pointer;
     
-        @include text-effect($very-big-font, $very-big-font, $nunito-font, 600, white);
+        @include text-effect( $very-big-font, $very-big-font, $nunito-font, 600, var( --background-color ) );
         border: none;
         outline: none;
     
-        background: linear-gradient(to bottom, $principal-color, hsla(241, 90%, 61%, 0.753));
+        background: linear-gradient( to bottom, var( --main-color ), var( --light-main-color ) );
         border-radius: 1rem;
 
         width: 45rem;

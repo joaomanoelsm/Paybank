@@ -5,12 +5,12 @@
 
     width: 100%;
     height: auto;
-    background-color: $secondary-warning-color;
+    background-color: var( --warning-text-color );
 
     margin-top: 4rem;
     padding: 2rem;
     border-radius: 0.5rem;
-    border: 0.1rem solid $warning-color;
+    border: 0.1rem solid var( --warning-color );
 
     img {
         width: 4rem;
@@ -18,7 +18,7 @@
 
     span {
         margin-left: 1.2rem;
-        @include text-effect($medium-font, $medium-font, $nunito-font, 600, $warning-color);
+        @include text-effect($medium-font, $medium-font, $nunito-font, 600, var( --warning-color ) );
     }
 }
 

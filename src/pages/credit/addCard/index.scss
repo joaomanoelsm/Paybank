@@ -4,7 +4,7 @@
         margin-top: 10rem;
 
         h2 {
-            @include text-effect( $very-big-font, $very-big-font, $nunito-font, 700, $text-color );
+            @include text-effect( $very-big-font, $very-big-font, $nunito-font, 700, var( --main-text-color ) );
             margin-bottom: 6rem;
         }
 
@@ -22,7 +22,7 @@
     #add-card {
 
         #add-card__cards-container {
-            
+
             #add-card__cards {
                 flex-wrap: nowrap;
                 justify-content: start;

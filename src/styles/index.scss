@@ -1,10 +1,29 @@
 /*Color*/
-$principal-color: #4440F5;
-$text-color: #13123F;
-$dark-gray: #222222;
-$light-gray: #F8F8F8;
-$warning-color: #F54040;
-$secondary-warning-color: #FE9D9D;
+.light-mode:root {
+    --main-color: #4440F5;
+    --light-main-color: rgba(68, 64, 245, 0.75);
+    --main-text-color: #13123F;
+    --second-text-color: #222222;
+    --third-text-color: #616161;
+    --fourth-text-color: #F8F8F8;
+    --background-color: #FFFFFF;
+    --warning-color: #F54040;
+    --warning-text-color: #FE9D9D;
+}
+
+/*Dark-mode*/
+.dark-mode:root {
+    --main-color: #4440F5;
+    --light-main-color: rgba(68, 64, 245, 0.75);
+    --main-text-color: #C2C0ED;
+    --second-text-color: #DDDDDD;
+    --third-text-color: #878787;
+    --fourth-text-color: #141414;
+    --background-color: #0D0D0D;
+    --warning-color: #7C0101;
+    --warning-text-color: #F75959;
+}
+
 
 /*Font*/
 $very-big-font: 6.4rem;
@@ -28,6 +47,7 @@ $screen-size-3: 85%;
 
 html {
     font-size: 62.5%;
+    background-color: var( --background-color );
 }
 
 @mixin text-effect($font, $lineHeight, $family, $weight, $color) {

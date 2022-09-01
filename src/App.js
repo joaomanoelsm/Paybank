@@ -10,6 +10,7 @@ import Credit from './pages/credit';
 import AddCard from './pages/credit/addCard';
 
 function App() {
+
   return (
     <BrowserRouter>
       <Header />

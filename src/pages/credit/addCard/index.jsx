@@ -16,8 +16,9 @@ const AddCard = () => {
 
   const [ warningText, setWarningText ] = useState('')
 
-  const inputSearchRef = useRef()
-  const inputCurrencyRef = useRef()
+  const inputSearchRef = useRef(null)
+  const inputCurrencyRef = useRef(null)
+  const cardRef = useRef(null)
 
   const cardsStyles = [
     {
@@ -91,6 +92,22 @@ const AddCard = () => {
       }
   }, [ inputSearch, store.contactArray ])
 
+  const parentRef = useRef()
+
+  const handleClick = ( e ) => {
+    e.stopImmediatePropagation()
+    
+    parentRef.current.childNodes.forEach(element => {
+      if ( element.classList.contains('card--select') )  element.classList.remove('card--select')
+    });
+
+    e.target.parentNode.classList.add('card--select')
+  }
+
+  useEffect( () => {
+    parentRef.current.childNodes.forEach( card => card.addEventListener('click', handleClick, { capture: true } )
+  )}, [])
+  
 
   return (
     <section id='add-card'>
@@ -98,9 +115,9 @@ const AddCard = () => {
       <Currency title={'Enter card limit'} setInputCurrency={ setInputCurrency } inputCurrency={ inputCurrency } inputCurrencyRef={ inputCurrencyRef } warningCurrency={ warningCurrency } setWarningCurrency={ setWarningCurrency } warningText={ warningText } />
       <div id='add-card__cards-container'>
         <h2>Choose card theme</h2>
-        <div id='add-card__cards'>
+        <div ref={ parentRef } id='add-card__cards'>
           { cardsStyles.map( cardStyle => (
-            <Card key={ cardStyle.id } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
+            <Card cardRef={ cardRef } handleClick={ handleClick } key={ cardStyle.id } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
           ))}
         </div>
       </div>

@@ -1,7 +1,7 @@
 #credit-card {
 
     h2 {
-        @include text-effect( $very-big-font, $very-big-font, $nunito-font, 700, $text-color );
+        @include text-effect( $very-big-font, $very-big-font, $nunito-font, 700, var( --main-text-color ) );
         margin-bottom: 6rem;
     }
 
@@ -17,7 +17,7 @@
         }
 
         span {
-            @include text-effect( $medium-font, $medium-font, $nunito-font, 600, $dark-gray );
+            @include text-effect( $medium-font, $medium-font, $nunito-font, 600, var( --second-text-color ) );
             margin-left: 2rem;
         }
     }

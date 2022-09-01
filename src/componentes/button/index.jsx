@@ -23,7 +23,7 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
   }
 
   const sendBalance = () => {
-    if (!warningCurrency && !warningSearch) {
+    if ( !warningCurrency && !warningSearch ) {
       defineMethod()
       dispatch(resetData())
       navigate('/Paybank')
