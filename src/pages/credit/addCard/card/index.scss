@@ -130,13 +130,16 @@
 
         display: flex;
         align-items: center;
+        justify-content: space-between;
+        margin-right: 2em;
 
         #card__date {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
+
             height: 3em;
-            margin-right: 1.8em;
+            margin-right: 2rem;
 
             h3 {
                 @include text-effect( 1.2em, 1.2em, $nunito-font, 700, white );
@@ -152,8 +155,8 @@
             flex-direction: column;
             justify-content: space-between;
 
+            margin-right: auto;
             height: 3em;
-            margin-right: 14em;
 
             h3 {
                 @include text-effect( 1.2em, 1.2em, $nunito-font, 700, white );
@@ -198,7 +201,7 @@
 .card--select {
     transition: all .4s;
     transform: scale(0.9);
-    border: 0.4rem outset var( --background-color );
+    border: 0.4rem solid var( --background-color );
     box-shadow: 0px 0px 0px 0.3rem var( --main-text-color );
 }
 

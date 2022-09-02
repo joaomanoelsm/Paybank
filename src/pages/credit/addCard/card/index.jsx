@@ -1,10 +1,10 @@
 import React, { memo } from 'react'
 
-const Card = ({ background, logo, flag, cardRef, handleClick, selected, select }) => {
+const Card = ({ background, logo, flag }) => {
 
 
   return (
-    <div ref={ cardRef } className='card'>
+    <div className='card'>
         <div className={`card__background ${ background }`}>
             <div id='card__sponsorships'>
                 <h3 id='card__logo'>Pay<span className={`${ logo }`}>bank</span></h3>

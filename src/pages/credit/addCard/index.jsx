@@ -7,7 +7,7 @@ import { useSelector } from 'react-redux'
 import Card from './card'
 import { filterLetterKeycaps, filterNumericKeycaps } from '../../../utils'
 import { memo } from 'react'
-import card from './card'
+import Button from '../../../componentes/button'
 
 const AddCard = () => {
   const [ inputSearch, setInputSearch ] = useState('')
@@ -17,10 +17,11 @@ const AddCard = () => {
   const [ warningSearch, setWarningSearch ] = useState(false)
 
   const [ warningText, setWarningText ] = useState('')
+  const [ cardTarget, setCardTarget ] = useState(null)
 
   const inputSearchRef = useRef(null)
   const inputCurrencyRef = useRef(null)
-  const cardRef = useRef(null)
+  const cardsRef = useRef()
 
   const cardsStyles = [
     {
@@ -94,19 +95,24 @@ const AddCard = () => {
       }
   }, [ inputSearch, store.contactArray ])
 
-  const parentRef = useRef()
 
   const handleClick = ( e ) => {
+    setCardTarget( e.target )
 
-    parentRef.current.childNodes.forEach( card => {
-      if ( card.classList.contains('card--select') ) card.classList.remove('card--select')
+    cardsRef.current.childNodes.forEach( card => {
+      if ( card.classList.contains('card--select') ) {
+        card.classList.remove('card--select')
+      }
     })
 
     e.target.classList.add('card--select')
   }
 
   useEffect( () => {
-    parentRef.current.childNodes.forEach( card => card.addEventListener('click', handleClick, { capture: true } ))
+  }, [])
+
+  useEffect( () => {
+    cardsRef.current.childNodes.forEach( card => card.addEventListener('click', handleClick, { capture: true } ))
   }, [])
 
   return (
@@ -115,12 +121,13 @@ const AddCard = () => {
       <Currency title={'Enter card limit'} setInputCurrency={ setInputCurrency } inputCurrency={ inputCurrency } inputCurrencyRef={ inputCurrencyRef } warningCurrency={ warningCurrency } setWarningCurrency={ setWarningCurrency } warningText={ warningText } />
       <div id='add-card__cards-container'>
         <h2>Choose card theme</h2>
-        <div ref={ parentRef } id='add-card__cards'>
+        <div ref={ cardsRef } id='add-card__cards'>
           { cardsStyles.map( cardStyle => (
-            <Card cardRef={ cardRef } handleClick={ handleClick } key={ cardStyle.id } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
+            <Card key={ cardStyle.id } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
           ))}
         </div>
       </div>
+      { inputCurrency && inputSearch && cardTarget && <Button /> }
     </section>
   )
 }

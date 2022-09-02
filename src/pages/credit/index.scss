@@ -1,4 +1,5 @@
 #credit-card {
+    cursor: pointer;
 
     h2 {
         @include text-effect( $very-big-font, $very-big-font, $nunito-font, 700, var( --main-text-color ) );
@@ -6,10 +7,12 @@
     }
 
     #credit-card__add {
-        cursor: pointer;
         padding: 4rem;
         border-radius: 1rem;
         box-shadow: 0 0.3rem 1rem 0 hsla(0, 0%, 0%, 0.103);
+
+        margin-bottom: 2rem;
+        cursor: pointer;
 
         img {
             width: 2.6rem;
@@ -19,6 +22,86 @@
         span {
             @include text-effect( $medium-font, $medium-font, $nunito-font, 600, var( --second-text-color ) );
             margin-left: 2rem;
+        }
+    }
+
+    #credit-card__items {
+
+        #credit-card__details {
+            transition: all .4s;
+            padding: 2rem 4rem;
+            box-shadow: 0 0 1rem 0.3rem  rgba(0, 0, 0, 0.103);
+
+            #credit-card__summary { 
+                overflow: hidden;
+                transition: all .4s;
+
+                display: flex;
+                align-items: center;
+                justify-content: space-between;
+
+                &::marker {
+                    content: none;
+                }
+
+                #credit-card__icon {
+                    width: 8rem;
+                    height: 8rem;
+                    margin-right: 6rem;
+                }
+
+                span {
+                    @include text-effect( $medium-font, $medium-font, $lato-font, 500, var( --main-text-color ) );
+                    margin-right: auto;
+                }
+
+                #credit-card__arrow {
+                    width: 3.9rem;
+                    height: 2.2rem;
+                }
+            }
+
+            #animation {
+                height: auto;
+                overflow: auto;
+                background-color: red;
+            }
+
+            #credit-card__data {
+                display: flex;
+                margin-top: 4rem;
+
+                #credit-card__limit {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: space-between;
+                    
+                    #credit-card__available-limit {
+
+                        h3 {
+                            @include text-effect( $medium-font, $medium-font, $nunito-font, 600, var( --main-text-color ) );
+                        }
+
+                        span {
+                            @include text-effect( $big-font, $big-font, $lato-font, 500, var( --main-text-color ) );
+                        }
+
+                    }
+
+                    #credit-card__current-limit {
+
+                        h3 {
+                             @include text-effect( $medium-font, $medium-font, $nunito-font, 600, var( --main-text-color ) );
+                        }
+
+                        span {
+                            @include text-effect( $big-font, $big-font, $lato-font, 500, var( --main-text-color ) );
+                        }
+
+                    }
+
+                }
+            }
         }
     }
 }

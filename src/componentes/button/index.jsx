@@ -16,17 +16,13 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
   const month = String(date.getMonth() + 1).padStart(2, '0')
   const currentDate = `${day}/${month}`
 
-  const defineMethod  = () => {
-    currentPage === 'Paybank/receive' ? dispatch(add(Number(inputCurrency))) : dispatch(decrease(Number(inputCurrency)))
-
-    dispatch(setTransaction({name: inputSearch, id: store.contactsTransactions.length + 1, method: currentPage, value: inputCurrency, date: currentDate }))
-  }
-
   const sendBalance = () => {
     if ( !warningCurrency && !warningSearch ) {
-      defineMethod()
-      navigate('/Paybank')
+      currentPage === 'Paybank/receive' ? dispatch(add(Number( inputCurrency ))) : dispatch(decrease(Number( inputCurrency )))
+  
+      dispatch(setTransaction({name: inputSearch, id: store.contactsTransactions.length + 1, method: currentPage, value: inputCurrency, date: currentDate }))
     }
+    navigate('/Paybank')
   } 
   
   return (
