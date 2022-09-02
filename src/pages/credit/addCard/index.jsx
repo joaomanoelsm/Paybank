@@ -6,6 +6,8 @@ import { selectUser } from '../../../store/useSlice'
 import { useSelector } from 'react-redux'
 import Card from './card'
 import { filterLetterKeycaps, filterNumericKeycaps } from '../../../utils'
+import { memo } from 'react'
+import card from './card'
 
 const AddCard = () => {
   const [ inputSearch, setInputSearch ] = useState('')
@@ -95,19 +97,17 @@ const AddCard = () => {
   const parentRef = useRef()
 
   const handleClick = ( e ) => {
-    e.stopImmediatePropagation()
-    
-    parentRef.current.childNodes.forEach(element => {
-      if ( element.classList.contains('card--select') )  element.classList.remove('card--select')
-    });
 
-    e.target.parentNode.classList.add('card--select')
+    parentRef.current.childNodes.forEach( card => {
+      if ( card.classList.contains('card--select') ) card.classList.remove('card--select')
+    })
+
+    e.target.classList.add('card--select')
   }
 
   useEffect( () => {
-    parentRef.current.childNodes.forEach( card => card.addEventListener('click', handleClick, { capture: true } )
-  )}, [])
-  
+    parentRef.current.childNodes.forEach( card => card.addEventListener('click', handleClick, { capture: true } ))
+  }, [])
 
   return (
     <section id='add-card'>
@@ -125,4 +125,4 @@ const AddCard = () => {
   )
 }
 
-export default AddCard
+export default memo(AddCard)

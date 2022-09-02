@@ -86,25 +86,14 @@ export const slice = createSlice({
             return { ...state, contactsTransactions: [...state.contactsTransactions, {name: payload.name, id: payload.id, method: payload.method, value: payload.value, date: payload.date}] }
         },
 
-        resetData( state) {
-            return { ...state, inputCurrency: 0, search: ''}
-        },
-
-        setWarningCurrency( state, { payload }) {
-            return {...state, warningCurrency: payload}
-        },
-
-        setWarningSearch( state, { payload }) {
-            return { ...state, warningSearch: payload}
-        },
         setThemeToggle(state) {
             return { ...state, themeToggle: !state.themeToggle }
         }
     }
 })
 
-export const { add, decrease, setPopup, setCurrency, addContact, setTransaction, resetData, setWarningCurrency, setWarningSearch, setThemeToggle } = slice.actions
+export const { add, decrease, setPopup, setCurrency, addContact, setTransaction, setThemeToggle } = slice.actions
 
-export const selectUser = (state) => state.user
+export const selectUser = ( state ) => state.user
 
 export default slice.reducer

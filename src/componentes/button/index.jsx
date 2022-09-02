@@ -1,7 +1,7 @@
 import React from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { useNavigate } from 'react-router-dom'
-import { add, decrease, resetData, selectUser, setTransaction } from '../../store/useSlice'
+import { add, decrease, selectUser, setTransaction } from '../../store/useSlice'
 
 const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inputSearch }) => {
   const navigate = useNavigate()
@@ -25,7 +25,6 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
   const sendBalance = () => {
     if ( !warningCurrency && !warningSearch ) {
       defineMethod()
-      dispatch(resetData())
       navigate('/Paybank')
     }
   } 

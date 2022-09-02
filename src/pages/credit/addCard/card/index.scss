@@ -10,6 +10,7 @@
     flex-shrink: 0;
 
     .card__background {
+        pointer-events: none;
         width: 100%;
         height: 14.5em;
         padding: 2em;
@@ -121,6 +122,7 @@
     }
 
     #card__data {
+        pointer-events: none;
         width: 100%;
         height: 8em;
         background: linear-gradient(to right, #152331, #000000);
@@ -196,7 +198,7 @@
 .card--select {
     transition: all .4s;
     transform: scale(0.9);
-    border: 0.4rem solid var( --background-color );
+    border: 0.4rem outset var( --background-color );
     box-shadow: 0px 0px 0px 0.3rem var( --main-text-color );
 }
 

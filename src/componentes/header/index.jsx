@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React from 'react'
 import sunIcon from '../../assets/svgs/Sun.svg'
 import moonIcon from '../../assets/svgs/Moon.svg'
 import { NavLink } from 'react-router-dom'
@@ -8,6 +8,7 @@ import { selectUser, setThemeToggle } from '../../store/useSlice'
 
 const Header = () => {
   const { themeToggle } = useSelector(selectUser)
+  
   const dispatch = useDispatch()
 
   useEffect( () => {

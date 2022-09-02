@@ -23,7 +23,7 @@
 
         cursor: pointer;
     
-        @include text-effect( $very-big-font, $very-big-font, $nunito-font, 600, var( --background-color ) );
+        @include text-effect( $very-big-font, $very-big-font, $nunito-font, 600, white );
         border: none;
         outline: none;
     
