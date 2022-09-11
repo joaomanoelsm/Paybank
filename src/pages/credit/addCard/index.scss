@@ -12,10 +12,17 @@
             display: flex;
             flex-wrap: wrap;
             justify-content: space-between;
+            
             overflow: auto;
             width: 100%;
         }
     }
+}
+
+.card--select {
+    transform: scale(0.9);
+    border: 0.4rem solid var( --background-color );
+    box-shadow: 0px 0px 0px 0.3rem var( --main-text-color );
 }
 
 @media (max-width: 1023px) {

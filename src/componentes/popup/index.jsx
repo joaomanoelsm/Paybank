@@ -77,7 +77,7 @@ const Popup = ({ title, buttonName, method }) => {
 
     if ( !popupSearch || minimumOfCharacters ) setWarning(true)
     else {
-      const capitalizedName = popupSearch[0].toLocaleUpperCase() + popupSearch.substring(1).replace(/^[' ']/gi, '')
+      const capitalizedName = popupSearch[0].toLocaleUpperCase() + popupSearch.substring(1).trim()
       const filteredContact = store.contactArray.some( contact => contact.name === capitalizedName)
 
       if ( filteredContact ) {

@@ -17,11 +17,13 @@ const AddCard = () => {
   const [ warningSearch, setWarningSearch ] = useState(false)
 
   const [ warningText, setWarningText ] = useState('')
-  const [ cardTarget, setCardTarget ] = useState(null)
+  const [ cardIndex, setCardIndex ] = useState(null)
 
   const inputSearchRef = useRef(null)
   const inputCurrencyRef = useRef(null)
   const cardsRef = useRef()
+
+  const { cardsArray } = useSelector(selectUser)
 
   const cardsStyles = [
     {
@@ -72,44 +74,40 @@ const AddCard = () => {
       if ( creditLimit ) {
           setWarningCurrency( true )
           setWarningText('Total credit card limit is 10.000')
-      } else {
-          setWarningCurrency( false )
-      }
+      } else setWarningCurrency( false )
 
       inputCurrencyRef.current.onkeydown = ( e ) => filterNumericKeycaps( e )
       
   }, [ inputCurrency, store.balance ])
 
   useEffect( () => {
-    if ( inputSearch ) {
+
+    inputSearchRef.current.onblur = () => {
       if ( inputSearch.length < 4 || inputSearch.length > 10 ) {
         setWarningSearch(true)
-        setWarningText('Enter a name longer than 4 characters and less than 10 characters')
+        setWarningText('Enter your name, between 4 and 10 characters')
       } else {
         setWarningSearch(false)
       }
     }
-      inputSearchRef.current.onkeydown = ( e ) => {
-          if (e.key === 'Enter') inputCurrencyRef.current.focus()
-          filterLetterKeycaps( e )
-      }
+
+    inputSearchRef.current.onkeydown = ( e ) => {
+        if (e.key === 'Enter') inputCurrencyRef.current.focus()
+        filterLetterKeycaps( e )
+    }
   }, [ inputSearch, store.contactArray ])
 
 
   const handleClick = ( e ) => {
-    setCardTarget( e.target )
+    
+    setCardIndex({ bg: e.target.children[0].classList[1], flag: e.target.children[0].children[0].children[1].classList[1], logo: e.target.children[0].children[0].children[0].children[0].classList[0], limit: inputCurrencyRef.current.value, userName: inputSearchRef.current.value, id: cardsArray.length + 1 })
 
     cardsRef.current.childNodes.forEach( card => {
-      if ( card.classList.contains('card--select') ) {
-        card.classList.remove('card--select')
-      }
+      if ( card.classList.contains('card--select') ) card.classList.remove('card--select')
     })
 
     e.target.classList.add('card--select')
   }
-
-  useEffect( () => {
-  }, [])
 
   useEffect( () => {
     cardsRef.current.childNodes.forEach( card => card.addEventListener('click', handleClick, { capture: true } ))
@@ -127,7 +125,7 @@ const AddCard = () => {
           ))}
         </div>
       </div>
-      { inputCurrency && inputSearch && cardTarget && <Button /> }
+      { inputCurrency && inputSearch && cardIndex ? <Button cardIndex={ cardIndex } /> : null }
     </section>
   )
 }

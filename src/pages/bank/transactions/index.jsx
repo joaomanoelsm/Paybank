@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux';
 import { selectUser } from '../../../store/useSlice';
 
 const Transactions = () => {
-    const store = useSelector(selectUser)
+  const { contactsTransactions } = useSelector(selectUser)
 
   return (
     <section id='transactions'>
@@ -13,9 +13,9 @@ const Transactions = () => {
             <h2>Transactions</h2>
         </div>
         <div id='transactions__historic'>
-            {store.contactsTransactions.map( user => {
+            { contactsTransactions.map( user => {
                 let icon;
-                if (user.method === 'transfer') {
+                if (user.method === 'Paybank/transfer') {
                     icon = transferIcon
                 } else {
                     icon = receiveIcon

@@ -79,11 +79,8 @@ const Loan = () => {
     }, [])
 
     useEffect( () => {
-        if (appearAplots) {
-            arrowIconRef.current.style.transform = 'rotateX(-360deg)'
-        } else {
-            arrowIconRef.current.style.transform = 'rotateX(-180deg)'
-        }
+        if (appearAplots) arrowIconRef.current.style.transform = 'rotateX(-360deg)'
+        else arrowIconRef.current.style.transform = 'rotateX(-180deg)'
     }, [ appearAplots ])
 
     const setInterest = useCallback( ( parcelNumber ) => {

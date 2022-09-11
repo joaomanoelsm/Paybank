@@ -19,66 +19,84 @@ const initialState = {
         {
             id: 1,
             name: 'Paula martins de castro',
-            method: 'receive',
+            method: 'Paybank/receive',
             value: 700,
             date: '14/12'
         },
         {
             id: 2,
             name: 'Roberta miranda oliveira',
-            method: 'receive',
+            method: 'Paybank/receive',
             value: 2630,
             date: '14/12'
         },
         {
             id: 3,
             name: 'Marcos silvano',
-            method: 'transfer',
+            method: 'Paybank/transfer',
             value: 1800,
             date: '14/12'
         },
         {
             id: 4,
             name: 'Cláudia soarez',
-            method: 'receive',
+            method: 'Paybank/receive',
             value: 1200,
             date: '14/12'
         },
         {
             id: 5,
             name: 'Kleber de machado alvez',
-            method: 'transfer',
+            method: 'Paybank/transfer',
             value: 200,
             date: '11/12'
         },
         {
             id: 6,
             name: 'Paulo césar soarez',
-            method: 'transfer',
+            method: 'Paybank/transfer',
             value: 4700,
             date: '06/12'
         }
     ],
-    themeToggle: true
+    themeToggle: true,
+    cardsArray: [
+        {
+        id: 1,
+        bg: 'card__background--purple',
+        logo: 'card__logo--purple',
+        flag: 'card__flag--purple',
+        limit: 10000,
+        userName: 'Carlos'
+        },
+        {
+        id: 2,
+        bg: 'card__background--green',
+        logo: 'card__logo--green',
+        flag: 'card__flag--green',
+        limit: 8700,
+        userName: 'Fernando'
+        }
+    ]
 }
 
 export const slice = createSlice({
     name: 'user',
     initialState,
     reducers: {
-        add(state, { payload } ) {
+        add( state, { payload } ) {
             return { ...state, balance: state.balance + payload }
         },
 
-        decrease(state, { payload } ) {
+        decrease( state, { payload } ) {
             return { ...state, balance: state.balance - payload }
         },
 
-        setPopup(state, { payload } ) {
+        setPopup( state, { payload } ) {
             return { ...state, popup: payload }
         },
 
-        addContact(state, { payload } ) {
+        addContact( state, { payload } ) {
             return { ...state, contactArray: [...state.contactArray, {name: payload.name, id: payload.id}] }
         },
         
@@ -86,13 +104,17 @@ export const slice = createSlice({
             return { ...state, contactsTransactions: [...state.contactsTransactions, {name: payload.name, id: payload.id, method: payload.method, value: payload.value, date: payload.date}] }
         },
 
-        setThemeToggle(state) {
+        setThemeToggle( state ) {
             return { ...state, themeToggle: !state.themeToggle }
+        },
+
+        setCustomCard( state, { payload }) {
+            return { ...state, cardsArray: [ ...state.cardsArray, { bg: payload.bg, flag: payload.flag, logo: payload.logo, limit: payload.limit, userName: payload.userName, id: payload.id } ] }
         }
     }
 })
 
-export const { add, decrease, setPopup, setCurrency, addContact, setTransaction, setThemeToggle } = slice.actions
+export const { add, decrease, setPopup, setCurrency, addContact, setTransaction, setThemeToggle, setCustomCard } = slice.actions
 
 export const selectUser = ( state ) => state.user
 

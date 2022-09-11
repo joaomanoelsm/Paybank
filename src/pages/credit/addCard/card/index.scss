@@ -1,10 +1,12 @@
 .card {
+    transition: transform .4s;
     font-size: 10px;
+    margin-bottom: 4.5em;
+
     width: 39em;
-    height: 22.5em;
+    max-height: 22.5em;
     border-radius: 2em;
 
-    margin-bottom: 4.5em;
     overflow: hidden;
     cursor: pointer;
     flex-shrink: 0;
@@ -12,17 +14,20 @@
     .card__background {
         pointer-events: none;
         width: 100%;
-        height: 14.5em;
         padding: 2em;
         
         #card__sponsorships {
             display: flex;
+            align-items: center;
             justify-content: space-between;
-            margin-bottom: 2em;
 
             #card__logo {
-                @include text-effect( $small-font, $small-font, $nunito-font, 700, var( --background-color ) );
-                
+                @include text-effect( 2.4em, 2.4em, $nunito-font, 700, white );
+
+                #card__logo__span {
+                    @include text-effect( 1em, 1em, $nunito-font, 700, none );
+                }
+
                 .card__logo--purple {
                     color: #4440F3;
                 }
@@ -116,8 +121,8 @@
             }
         }
 
-        span {
-            @include text-effect( $small-font, $small-font, $nunito-font, 600, var( --background-color ) );
+        .card__number {
+            @include text-effect( 2.4em, 2.4em, $nunito-font, 600, white );
         }
     }
 
@@ -126,12 +131,11 @@
         width: 100%;
         height: 8em;
         background: linear-gradient(to right, #152331, #000000);
-        padding: 2em 2.5em;  
+        padding: 0 2em;  
 
         display: flex;
         align-items: center;
         justify-content: space-between;
-        margin-right: 2em;
 
         #card__date {
             display: flex;
@@ -139,7 +143,7 @@
             justify-content: space-between;
 
             height: 3em;
-            margin-right: 2rem;
+            margin-right: 2em;
 
             h3 {
                 @include text-effect( 1.2em, 1.2em, $nunito-font, 700, white );
@@ -198,12 +202,6 @@
     
 }
 
-.card--select {
-    transition: all .4s;
-    transform: scale(0.9);
-    border: 0.4rem solid var( --background-color );
-    box-shadow: 0px 0px 0px 0.3rem var( --main-text-color );
-}
 
 @media (max-width: 1360px) {
     #card {
