@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/Paybank/static/css/main.85b8b985.css",
-    "main.js": "/Paybank/static/js/main.f3cde772.js",
+    "main.css": "/Paybank/static/css/main.b48ea6cc.css",
+    "main.js": "/Paybank/static/js/main.06574c3b.js",
     "static/media/Loan-icon.svg": "/Paybank/static/media/Loan-icon.ceb0a2587e900bc43d8921785689f977.svg",
     "static/media/Sun.svg": "/Paybank/static/media/Sun.eb93499bcdb592e17a52738be249329d.svg",
     "static/media/Moon.svg": "/Paybank/static/media/Moon.19deeed6cc7cbeaf225fcbc6f8abf30b.svg",
@@ -17,11 +17,11 @@
     "static/media/Add.svg": "/Paybank/static/media/Add.331c51bc39aa6b13c860a1fcc83fdbbc.svg",
     "static/media/More.svg": "/Paybank/static/media/More.e63b83d41b1d116b9e1266144d109fe3.svg",
     "static/media/Less.svg": "/Paybank/static/media/Less.504eece8962fec8c2f248f4f3db26980.svg",
-    "main.85b8b985.css.map": "/Paybank/static/css/main.85b8b985.css.map",
-    "main.f3cde772.js.map": "/Paybank/static/js/main.f3cde772.js.map"
+    "main.b48ea6cc.css.map": "/Paybank/static/css/main.b48ea6cc.css.map",
+    "main.06574c3b.js.map": "/Paybank/static/js/main.06574c3b.js.map"
   },
   "entrypoints": [
-    "static/css/main.85b8b985.css",
-    "static/js/main.f3cde772.js"
+    "static/css/main.b48ea6cc.css",
+    "static/js/main.06574c3b.js"
   ]
 }
