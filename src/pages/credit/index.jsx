@@ -64,11 +64,11 @@ const Credit = () => {
               <Card cardNumber={ cardNumber } userName={ cardStyle.userName } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
               <div id='credit-card__limit'>
                 <div id='credit-card__available-limit'>
-                  <h3>Limite atual</h3>
+                  <h3>Current limit</h3>
                   <span>R$ { cardStyle.limit }</span>
                 </div>
                 <div id='credit-card__current-limit'>
-                  <h3>Limite disponivel</h3>
+                  <h3>Available limit</h3>
                   <span>R$ { cardStyle.limit }</span>
                 </div>
               </div>

@@ -101,13 +101,18 @@ const Loan = () => {
 
         if ( transactionLimit ) {
             setWarning(true)
-            setWarningText('The maximum value is 10,000')
-        } else if ( Number(inputCurrency) === 0 ) {
-            setWarning(true)
-            setWarningText('The minimun value is 10,000')
+            setWarningText('The maximum value is 10,000$')
         } else {
             setWarning(false)
             setWarningText('Select the parcel')
+        }
+
+        inputCurrencyRef.current.onblur = ( e ) => {
+           if ( Number(inputCurrency) === 0 ) {
+            setWarning(true)
+            setWarningText('The minimun value is 1$')
+            } 
+            filterNumericKeycaps( e )
         }
 
         inputCurrencyRef.current.onkeydown = ( e ) => {

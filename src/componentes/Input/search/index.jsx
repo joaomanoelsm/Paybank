@@ -18,7 +18,7 @@ const Search = ({ title, inputSearch, setInputSearch, warningSearch, inputSearch
           <input autoFocus={ currentPage ? true : false } ref={ inputSearchRef }  className='search__input' onChange={ ({ target }) => setInputSearch( target.value ) } value={ inputSearch } placeholder={ currentPage ? 'Between 4 and 10 characters' : 'Look for the contact'} type="text" />
         </div>
         { warningSearch && <Warning text={ warningText ? warningText : 'This contact does not exist'} /> }
-        { store.popup && <Popup method={'text'} title={'Add Contact'} buttonName={['Cancelar', 'Adicionar']} /> }
+        { store.popup && <Popup method={'text'} title={'Add Contact'} buttonName={['Cancel', 'Add']} /> }
       </section>
     </>
   )

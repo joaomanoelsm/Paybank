@@ -96,9 +96,7 @@ const Popup = ({ title, buttonName, method }) => {
     if ( !warning ) method === 'number' ? addCurrencyToBalance() : addContactToList()
   }
     
-  const addPopupValue  = () => { 
-    filterPopupValue()
-  }
+  const addPopupValue  = () => filterPopupValue()
 
   return (
     <div className='popup__wallpaper' >

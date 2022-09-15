@@ -50,15 +50,17 @@ const Payments = () => {
                 {icons.map( icon => {
                     return (
                     <div onClick={ () => navigateFilter(icon.name.toLocaleLowerCase()) } className='payments__icon' key={ icon.name }>
-                        <div className='payments__svg'>
-                            <img src={ icon.img } alt="" />
-                        </div>
-                        <span>{ icon.name }</span>
+                        <abbr title={ icon.name }>
+                            <div className='payments__svg'>
+                                <img src={ icon.img } alt="" />
+                            </div>
+                            <span>{ icon.name }</span>
+                        </abbr>
                     </div>
                     )
                 })}
             </div>
-            { popup && <Popup title={'Valor do depósito'} method={'number'} buttonName={['Cancelar', 'Enviar']}  /> }
+            { popup && <Popup title={'Deposit amount'} method={'number'} buttonName={['Cancel', 'Enviar']}  /> }
         </section>
     )
 }
