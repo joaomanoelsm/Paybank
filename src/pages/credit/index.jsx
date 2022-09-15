@@ -72,6 +72,7 @@ const Credit = () => {
                   <span>R$ { cardStyle.limit }</span>
                 </div>
               </div>
+              <div id='credit-card__limit-bar'></div>
             </div>
           </div>
         ))}

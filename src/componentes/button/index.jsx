@@ -26,8 +26,8 @@ const Button = ({ inputCurrency, warningCurrency, warningSearch, buttonRef, inpu
       currentPage === 'Paybank/receive' ? dispatch(add(Number( inputCurrency ))) : dispatch(decrease(Number( inputCurrency )))
   
       dispatch(setTransaction({ name: inputSearch, id: store.contactsTransactions.length + 1, method: currentPage, value: inputCurrency, date: currentDate }))
+      navigate('/Paybank')
     }
-    navigate('/Paybank')
   }
 
   const filterButtonAction  = () => currentPage === 'Paybank/credit/add-card' ? makeCard() : changeBalance()

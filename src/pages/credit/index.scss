@@ -76,11 +76,10 @@
                 display: flex;
                 justify-content: space-between;
                 padding: 4em;
-                overflow-x: auto;
 
                 .card {
-                    margin: 0;
                     font-size: 20px;
+                    margin: 0;
 
                     .card__background {
                         #card__sponsorships {
@@ -101,23 +100,8 @@
                     flex-direction: column;
                     justify-content: space-between;
 
-                    position: relative;
                     width: 100%;
                     margin: 0 auto 0 4em;
-
-                    &::after {
-                        content: '';
-                        position: absolute;
-                        top: 0; right: 0;
-                        display: inline-block;
-
-                        width: 4em;
-                        height: 100%;
-                        max-height: 45em;
-                        background-color: #40F573;
-                        border-radius: 0.5em;
-                    }
-
                     
                     #credit-card__available-limit {
                         margin-right: 2em;
@@ -147,6 +131,12 @@
 
                 }
 
+                #credit-card__limit-bar {
+                    flex-shrink: 0;
+                    width: 4em;
+                    background-color: #40F573;
+                    border-radius: 0.5em;
+                }
             }
         }
 
@@ -163,6 +153,7 @@
 
             .credit-card__details {
                 font-size: 7px;
+                max-height: 120em;
 
                 .credit-card__data {
 
@@ -181,11 +172,57 @@
         #credit-card__items {
 
             .credit-card__details {
+                font-size: 10px;
+
+                .credit-card__data {
+                    overflow: auto;
+
+                    .card {
+                        font-size: 20px;
+                    }
+
+                    #credit-card__limit {
+                        margin-right: 4em;
+                        white-space: nowrap;
+                    }
+                }
+            }
+        }
+    }
+}
+
+
+@media (max-width: 768px) {
+    #credit-card {
+    
+        #credit-card__items {
+
+            .credit-card__details {
+                font-size: 5px;
 
                 .credit-card__data {
 
                     .card {
-                        font-size: 14px;
+                        font-size: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    #credit-card {
+    
+        #credit-card__items {
+
+            .credit-card__details {
+                font-size: 3.5px;
+
+                .credit-card__data {
+
+                    .card {
+                        font-size: 7px;
                     }
                 }
             }

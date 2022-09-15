@@ -102,6 +102,9 @@ const Loan = () => {
         if ( transactionLimit ) {
             setWarning(true)
             setWarningText('The maximum value is 10,000')
+        } else if ( Number(inputCurrency) === 0 ) {
+            setWarning(true)
+            setWarningText('The minimun value is 10,000')
         } else {
             setWarning(false)
             setWarningText('Select the parcel')
@@ -132,7 +135,7 @@ const Loan = () => {
     const addLoanAmount = () => {
         const invalidInstallment = name === '--Select the parcel--'
 
-        if ( invalidInstallment || warning ) setWarning(true)
+        if ( invalidInstallment || warning || Number(inputCurrency) === 0 ) setWarning(true)
         else {
             dispatch(add(Number( inputCurrency )))
             navigate('/Paybank')
