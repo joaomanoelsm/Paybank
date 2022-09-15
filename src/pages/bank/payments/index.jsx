@@ -60,7 +60,7 @@ const Payments = () => {
                     )
                 })}
             </div>
-            { popup && <Popup title={'Deposit amount'} method={'number'} buttonName={['Cancel', 'Enviar']}  /> }
+            { popup && <Popup title={'Deposit amount'} method={'number'} buttonName={['Cancel', 'Submit']}  /> }
         </section>
     )
 }

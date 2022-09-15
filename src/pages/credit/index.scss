@@ -34,7 +34,6 @@
             font-size: 10px;
 
             max-height: 12em;
-
             box-shadow: 0 0 1em 0.3em  rgba(0, 0, 0, 0.103);
             border-radius: 1em;
             margin-bottom: 2em;
@@ -45,10 +44,6 @@
                 display: flex;
                 align-items: center;
                 justify-content: space-between;
-
-                &::marker {
-                    content: none;
-                }
 
                 #credit-card__icon {
                     pointer-events: none;
