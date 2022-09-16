@@ -7,56 +7,35 @@ const initialState = {
     warningSearch: false,
     contactArray: [
         {
-            name: 'Rodrigo',
+            name: 'Rodrigo costa',
             id: 1
         },
         {
-            name: 'Carlos',
+            name: 'Carlos santos',
             id: 2
         }
     ],
     contactsTransactions: [
         {
             id: 1,
-            name: 'Paula martins de castro',
+            name: 'José oliveira',
             method: 'Paybank/receive',
             value: 700,
             date: '14/12'
         },
         {
             id: 2,
-            name: 'Roberta miranda oliveira',
+            name: 'Roberta miranda',
             method: 'Paybank/receive',
             value: 2630,
             date: '14/12'
         },
         {
             id: 3,
-            name: 'Marcos silvano',
+            name: 'Marcos castro',
             method: 'Paybank/transfer',
             value: 1800,
             date: '14/12'
-        },
-        {
-            id: 4,
-            name: 'Cláudia soarez',
-            method: 'Paybank/receive',
-            value: 1200,
-            date: '14/12'
-        },
-        {
-            id: 5,
-            name: 'Kleber de machado alvez',
-            method: 'Paybank/transfer',
-            value: 200,
-            date: '11/12'
-        },
-        {
-            id: 6,
-            name: 'Paulo césar soarez',
-            method: 'Paybank/transfer',
-            value: 4700,
-            date: '06/12'
         }
     ],
     themeToggle: true,

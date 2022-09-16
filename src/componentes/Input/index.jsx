@@ -66,7 +66,7 @@ const Input = ({ title }) => {
 
     return (
         <>
-            <Currency title={'Who do you want to transfer to'} setWarningText={ setWarningText } warningText={ warningText } inputCurrency={ inputCurrency } setInputCurrency={ setInputCurrency } setWarningCurrency={ setWarningCurrency } warningCurrency={ warningCurrency } inputCurrencyRef={ inputCurrencyRef } />
+            <Currency title={ title } setWarningText={ setWarningText } warningText={ warningText } inputCurrency={ inputCurrency } setInputCurrency={ setInputCurrency } setWarningCurrency={ setWarningCurrency } warningCurrency={ warningCurrency } inputCurrencyRef={ inputCurrencyRef } />
             <Search inputSearch={ inputSearch } setInputSearch={ setInputSearch } setWarningSearch={ setWarningSearch} warningSearch={ warningSearch } inputSearchRef={ inputSearchRef } />
             { inputSearch && inputCurrency > 0 && <Button inputCurrency={ inputCurrency } warningCurrency={ warningCurrency } warningSearch={ warningSearch } buttonRef={ buttonRef } inputSearch={ inputSearch } /> }
             <Contacts setInputSearch={ setInputSearch } />

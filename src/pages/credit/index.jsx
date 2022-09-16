@@ -9,12 +9,9 @@ import { selectUser } from '../../store/useSlice';
 import Card from './addCard/card';
 
 const Credit = () => {
-  const { cardsArray } = useSelector(selectUser)
-  const [ cardNumber, setCardNumber ] = useState(null)
-  
   const arrowRef = useRef()
-  const cardNumberRef = useRef()
-
+  
+  const { cardsArray } = useSelector(selectUser)
   const navigate = useNavigate()
 
   const switchSideOfArrow = ( e ) => {
@@ -38,12 +35,9 @@ const Credit = () => {
       }
       else cardNumber.push( randomNumber )
     }
+
     return cardNumber
   }
-
-  useEffect( () => {
-    setCardNumber( cardNumberRef.current.innerText )
-  }, [])
 
   return (
     <section id='credit-card' >
@@ -57,11 +51,11 @@ const Credit = () => {
           <div key={ cardStyle.id } className='credit-card__details'>
             <div id='credit-card__summary' onClick={ switchSideOfArrow }>
               <img id='credit-card__icon' src={ cardIcon } alt="Icone do cartão" />
-              <span ref={ cardNumberRef }>{ creditCardNumberGenerator() }</span>
+              <span>{ creditCardNumberGenerator() }</span>
               <img ref={ arrowRef } id='credit-card__arrow' src={ arrowIcon } alt="Icone de direção" />
             </div>
             <div className='credit-card__data'>
-              <Card cardNumber={ cardNumber } userName={ cardStyle.userName } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
+              <Card cardNumber={ creditCardNumberGenerator() } userName={ cardStyle.userName } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
               <div id='credit-card__limit'>
                 <div id='credit-card__available-limit'>
                   <h3>Current limit</h3>

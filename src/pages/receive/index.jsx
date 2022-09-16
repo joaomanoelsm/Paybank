@@ -5,7 +5,7 @@ const Receive = () => {
   
   return (
     <section id='receive'>
-      <Input title={'Who do you want to transfer to'}  />
+      <Input title={'Who do you want to charge'} />
     </section>
   )
 }
