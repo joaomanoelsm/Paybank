@@ -1,70 +1,73 @@
-# Getting Started with Create React App
+# Bank
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+<p>Website inspired by banking apps.</p>
 
-## Available Scripts
+## Installation
 
-In the project directory, you can run:
+### `$ git init`
 
-### `npm start`
+<p>git init to create your local repository</p>
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+### `$ git clone https://github.com/joaomanoelsm/Paybank.git`
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+<p>git clone to copy the project and its dependencies to your machine</p>
 
-### `npm test`
+### `npm install`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+<p>npm install to download all project dependencies</p>
 
-### `npm run build`
+## Website
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+<p>website link via github pages: https://joaomanoelsm.github.io/Paybank/</p>
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+## Technologies and libraries
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+<ul>
+ <li>React</li>
+ <li>React-Routers</li>
+ <li>Redux</li>
+ <li>Html</li>
+ <li>Scss</li>
+ <li>JavaScript</li>
+ <li>Git</li>
+ <li>Figma</li>
+</ul>
 
-### `npm run eject`
+## Guide
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### Main
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+<p>
+  This is the home page, where we can access all the features of the site, in the header we have the logo, and the theme change function, in the first session the       user balance is shown, the second are the payment options, which are them , receive, transfer, credit, deposit and loan, the last session is responsible for storing   bank transactions.
+</p>
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+![POST_SHOW](https://github.com/joaomanoelsm/Paybank/blob/master/public/Readme/Main.jpg)
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+<br>
 
-## Learn More
+### Receive
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+<p>The first page is divided into three sections, the numeric field, where the amount to be received will be placed, the text field, where the name of the user to be charged will be placed, the last is the section to add contacts, when clicking on add , a popup will open to enter the name to be included in the contact list.</p>
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+![POST_SHOW](https://github.com/joaomanoelsm/Paybank/blob/master/public/Readme/Receive.jpg)
+![POST_SHOW](https://github.com/joaomanoelsm/Paybank/blob/master/public/Readme/Popup-Receive.jpg)
 
-### Code Splitting
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+### Transfer
 
-### Analyzing the Bundle Size
+<p>Like the previous page, it contains the same fields, but the value placed in the first session will be the value to be transferred and the user name will be the one that will receive the amount.</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+![POST_SHOW](https://github.com/joaomanoelsm/Paybank/blob/master/public/Readme/Transfer.jpg)
 
-### Making a Progressive Web App
+<br>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+### Deposit
 
-### Advanced Configuration
+<p>The deposit page, unlike the others, will not open a page, but a popup, in the popup a numerical box will appear, which will be the value to be added.</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+![POST_SHOW](https://github.com/joaomanoelsm/Paybank/blob/master/public/Readme/Popup-Main.jpg)
 
-### Deployment
+<br>
+<p>Thanks for visiting my repository, and i hope it's useful, see you soon</p>
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
