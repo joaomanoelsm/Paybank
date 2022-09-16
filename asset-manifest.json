@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/Paybank/static/css/main.54112e5d.css",
-    "main.js": "/Paybank/static/js/main.7fdf9968.js",
+    "main.js": "/Paybank/static/js/main.9fe42d11.js",
     "static/media/Loan-icon.svg": "/Paybank/static/media/Loan-icon.ceb0a2587e900bc43d8921785689f977.svg",
     "static/media/Sun.svg": "/Paybank/static/media/Sun.eb93499bcdb592e17a52738be249329d.svg",
     "static/media/Moon.svg": "/Paybank/static/media/Moon.19deeed6cc7cbeaf225fcbc6f8abf30b.svg",
@@ -18,10 +18,10 @@
     "static/media/More.svg": "/Paybank/static/media/More.e63b83d41b1d116b9e1266144d109fe3.svg",
     "static/media/Less.svg": "/Paybank/static/media/Less.504eece8962fec8c2f248f4f3db26980.svg",
     "main.54112e5d.css.map": "/Paybank/static/css/main.54112e5d.css.map",
-    "main.7fdf9968.js.map": "/Paybank/static/js/main.7fdf9968.js.map"
+    "main.9fe42d11.js.map": "/Paybank/static/js/main.9fe42d11.js.map"
   },
   "entrypoints": [
     "static/css/main.54112e5d.css",
-    "static/js/main.7fdf9968.js"
+    "static/js/main.9fe42d11.js"
   ]
 }
