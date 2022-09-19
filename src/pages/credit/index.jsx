@@ -8,7 +8,6 @@ import { useDispatch, useSelector } from 'react-redux';
 import { selectUser, setCustomCard } from '../../store/useSlice';
 import Card from './addCard/card';
 
-
 const Credit = () => {
   const arrowRef = useRef()
   
