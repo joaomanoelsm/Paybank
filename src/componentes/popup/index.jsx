@@ -85,7 +85,7 @@ const Popup = ({ title, buttonName, method }) => {
         setWarningText('The contact already exists')
       } 
       else {
-        dispatch(addContact({name: capitalizedName, id: store.contactArray.length + 1}))
+        dispatch(addContact({ name: capitalizedName, id: store.contactArray.length + 1 }))
         dispatch(setPopup(false))
         setWarning(false)
       }

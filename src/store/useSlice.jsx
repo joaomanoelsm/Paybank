@@ -1,4 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit"; 
+import { creditCardNumberGenerator } from '../utils'
 
 const initialState = {
     balance: 0,
@@ -46,7 +47,8 @@ const initialState = {
         logo: 'card__logo--purple',
         flag: 'card__flag--purple',
         limit: 10000,
-        userName: 'Carlos'
+        userName: 'Carlos',
+        cardNumber: creditCardNumberGenerator()
         },
         {
         id: 2,
@@ -54,7 +56,8 @@ const initialState = {
         logo: 'card__logo--green',
         flag: 'card__flag--green',
         limit: 8700,
-        userName: 'Fernando'
+        userName: 'Fernando',
+        cardNumber: creditCardNumberGenerator()
         }
     ]
 }
@@ -88,7 +91,7 @@ export const slice = createSlice({
         },
 
         setCustomCard( state, { payload }) {
-            return { ...state, cardsArray: [ ...state.cardsArray, { bg: payload.bg, flag: payload.flag, logo: payload.logo, limit: payload.limit, userName: payload.userName, id: payload.id } ] }
+            return { ...state, cardsArray: [ ...state.cardsArray, { bg: payload.bg, flag: payload.flag, logo: payload.logo, limit: payload.limit, userName: payload.userName, id: payload.id, cardNumber: creditCardNumberGenerator() } ] }
         }
     }
 })

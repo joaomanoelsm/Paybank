@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { useSelector } from 'react-redux/es/exports';
 import { selectUser } from '../../../store/useSlice';
-import { convertNumberToCurrency } from '../../../utils';
 import { useRef } from 'react';
 
 const Balance = () => {
@@ -12,9 +11,13 @@ const Balance = () => {
 
   const { balance, themeToggle } = useSelector(selectUser)
 
+  const convertNumberToCurrency = ( currency ) => {
+    return currency.toLocaleString('pt-BR', {style: 'currency', currency: 'BRL', minimumFractionDigits: 2}) 
+  } 
+
   React.useEffect( () => {
-    icon ? balanceRef.current.innerText = convertNumberToCurrency( balance ) 
-    : balanceRef.current.innerText = 'R$ ****'
+    if ( icon ) balanceRef.current.innerText = convertNumberToCurrency( balance ) 
+    else balanceRef.current.innerText = 'R$ ****'
 
     if ( themeToggle ) iconRef.current.classList.add('balance__icon--dark-mode')
     else iconRef.current.classList.add('balance__icon--light-mode')

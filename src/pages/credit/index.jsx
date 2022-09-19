@@ -1,17 +1,19 @@
-import React, { useEffect, useState } from 'react'
+import React, { useCallback, useEffect, useState } from 'react'
 import addIcon from '../../assets/svgs/Add.svg'
 import { useNavigate } from 'react-router-dom';
 import cardIcon from '../../assets/svgs/Card-icon.svg'
 import arrowIcon from '../../assets/svgs/Arrow.svg'
 import { useRef } from 'react';
-import { useSelector } from 'react-redux';
-import { selectUser } from '../../store/useSlice';
+import { useDispatch, useSelector } from 'react-redux';
+import { selectUser, setCustomCard } from '../../store/useSlice';
 import Card from './addCard/card';
+
 
 const Credit = () => {
   const arrowRef = useRef()
   
   const { cardsArray } = useSelector(selectUser)
+  const dispatch = useDispatch()
   const navigate = useNavigate()
 
   const switchSideOfArrow = ( e ) => {
@@ -19,26 +21,7 @@ const Credit = () => {
     if ( e.target.parentNode.classList.contains('animation') ) e.target.children[2].style.transform = 'rotateX(-180deg)'
     else e.target.children[2].style.transform = 'rotateX(-360deg)'
   }
-
-  const creditCardNumberGenerator = () => {
-    const numberOfCardCharacters = 16
-    let cardNumber = []
-    let spaceBetweenNumbers = 4
-
-    for ( let i = 0 ; i < numberOfCardCharacters ; i++ ) {
-      const randomNumber = Math.floor(Math.random() * 10)
-
-      if ( cardNumber.length === spaceBetweenNumbers ) {
-        cardNumber.push( ' ' )
-        cardNumber.push( randomNumber )
-        spaceBetweenNumbers += 4 + 1
-      }
-      else cardNumber.push( randomNumber )
-    }
-
-    return cardNumber
-  }
-
+  
   return (
     <section id='credit-card' >
       <h2>Your credit cards</h2>
@@ -51,11 +34,11 @@ const Credit = () => {
           <div key={ cardStyle.id } className='credit-card__details'>
             <div id='credit-card__summary' onClick={ switchSideOfArrow }>
               <img id='credit-card__icon' src={ cardIcon } alt="Icone do cartão" />
-              <span>{ creditCardNumberGenerator() }</span>
+              <span>{ cardStyle.cardNumber }</span>
               <img ref={ arrowRef } id='credit-card__arrow' src={ arrowIcon } alt="Icone de direção" />
             </div>
             <div className='credit-card__data'>
-              <Card cardNumber={ creditCardNumberGenerator() } userName={ cardStyle.userName } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
+              <Card cardNumber={ cardStyle.cardNumber } userName={ cardStyle.userName } background={ cardStyle.bg } logo={ cardStyle.logo } flag={ cardStyle.flag } />
               <div id='credit-card__limit'>
                 <div id='credit-card__available-limit'>
                   <h3>Current limit</h3>
