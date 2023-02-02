@@ -49,6 +49,9 @@ html {
     font-size: 62.5%;
     background-color: var( --background-color );
     -webkit-tap-highlight-color: #4340f51e;
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    -moz-text-size-adjust: none;
 }
 
 @mixin text-effect($font, $lineHeight, $family, $weight, $color) {
