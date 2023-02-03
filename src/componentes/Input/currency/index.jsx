@@ -8,7 +8,7 @@ const Currency = ({ title, warningText, inputCurrency, setInputCurrency, warning
     return (
         <section className='search'>
             <label htmlFor="search__input">{ title }</label>
-            <input autoFocus={ currentPage ? true : false } ref={ inputCurrencyRef } onChange={ ({ target }) => setInputCurrency( target.value )} value={ inputCurrency } className='search__input' placeholder='R$' type="text" />
+            <input autoFocus={ currentPage ? true : false } ref={ inputCurrencyRef } onChange={ ({ target }) => setInputCurrency( target.value )} value={ inputCurrency } className='search__input' placeholder='R$' type="number" />
             { warningCurrency && <Warning text={ warningText } /> }
         </section>
     )

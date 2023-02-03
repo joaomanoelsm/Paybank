@@ -3,8 +3,8 @@ import { useNavigate } from 'react-router-dom'
 import arrowBackSvg from '../../assets/svgs/Arrow-back.svg'
 
 const Erro = () => {
-
   const navigate = useNavigate()
+
   return (
     <section id='erro'>
       <h2 id='erro__number'>404</h2>

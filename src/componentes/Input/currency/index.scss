@@ -23,6 +23,10 @@ section.search {
         border-left-color: transparent;
         border-right-color: transparent;
 
+        &::-webkit-inner-spin-button {
+            -webkit-appearance: none;
+        }
+
         @include text-effect( $medium-font, $medium-font, $nunito-font, 500, var( --second-text-color ) );
 
         
